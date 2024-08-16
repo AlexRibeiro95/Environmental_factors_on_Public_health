@@ -1,0 +1,206 @@
+city,name,latitude,longitude,address,area_m2,area_missing
+London,K+K Hotel George Kensington,51.492352,-0.195519,"1-15 Templeton Place, London",,True
+London,Flanders Fields Memorial Garden,51.5005394,-0.1357828,"Westminster, London",,True
+London,WWT London Wetland Centre,51.476141,-0.234665,"Queen Elizabeth Walk, London",,True
+London,The Phene,51.48517400000001,-0.167575,"9 Phene Street, London",,True
+London,Polish Air Force Memorial,51.5488434,-0.4003079999999999,"Western Avenue, Ruislip",,True
+London,Tower Hamlets Cemetery Park,51.5231445,-0.0272155,"Southern Grove, London",,True
+London,Lost Society,51.4740879,-0.1570307,"339 Battersea Park Road, London",,True
+London,Kenwood House,51.57138819999999,-0.1674543,"Hampstead Lane, London",,True
+London,Chelsea Physic Garden,51.48491720000001,-0.1627774,"66 Royal Hospital Road, London",,True
+London,The National Archives,51.4811031,-0.2793934,"Bessant Drive, Richmond",,True
+London,Dulwich Picture Gallery,51.44606219999999,-0.08632889999999999,London,,True
+London,St Saviour's Edible Garden,51.4450105,-0.043012,"Brockley Rise, London",,True
+London,Battersea Park Children's Zoo,51.4813528,-0.1565835,"Battersea Park, London",,True
+London,Vauxhall City Farm,51.4871332,-0.1191085,"165 Tyers Street, London",,True
+London,Granville Square garden,51.5276846,-0.1135453,"Granville Square, London",,True
+London,Stockwell Skate Park,51.4660545,-0.1163401,"Stockwell Skate Park, Stockwell Road, London",,True
+London,Old Royal Naval College,51.4827142,-0.006696400000000001,London,,True
+London,Beckenham War Memorial,51.406914,-0.0320175,"Croydon Road, Beckenham",,True
+London,Hanning Recruitment,51.5092118,-0.1438322,"12 Hay Hill, London",,True
+London,"Lee Valley Camping and Caravan Park, Edmonton",51.6322395,-0.03501669999999999,"Meridian Way, London",,True
+London,National Trust - Osterley Park and House,51.48952260000001,-0.351652,"Jersey Road, Isleworth",,True
+London,Chiswick House and Gardens Trust,51.4838077,-0.2586959999999999,"Chiswick House, London",,True
+London,Argyle Square Public Basketball Court,51.5292915,-0.1225276,"9 Argyle Square, London",,True
+London,Hackney Marshes Centre,51.5532444,-0.025582,"Homerton Road, London",,True
+London,National Trust - Fenton House and Garden,51.5589422,-0.1798884,"Fenton House, Hampstead Grove, London",,True
+London,Bishops Park,51.47166929999999,-0.2170803,"Bishop's Avenue, London",,True
+London,Mudchute Park and Farm,51.4920932,-0.0104424,"Pier Street, London",,True
+London,West Lodge Park Hotel,51.6692222,-0.1577998,"Cockfosters Road, Hadley Wood, Barnet",,True
+London,Wanstead Flats,51.558904,0.036322,"Capel Road, London",,True
+Amsterdam,Camping Zeeburg Amsterdam,52.3653339,4.959441099999999,"Zuider IJdijk 20, Amsterdam",,True
+Amsterdam,ARTIS,52.3660003,4.9165321,"Plantage Kerklaan 38-40, Amsterdam",,True
+Amsterdam,Hortus Botanicus,52.36691889999999,4.907623099999999,"Plantage Middenlaan 2a, Amsterdam",,True
+Amsterdam,Restaurant Pompstation,52.3659288,4.933456000000001,"Zeeburgerdijk 52, Amsterdam",,True
+Amsterdam,Camping Amsterdam Gaasper,52.3126243,4.991558700000001,"Loosdrechtdreef 7, Amsterdam",,True
+Amsterdam,Groengebied Amstelland,52.2972006,4.888821900000001,"Bankrasweg 1b, Amstelveen",,True
+Amsterdam,"Co-Operatie Zuid: ""Wij krijgen Kippen!""",52.341043,4.8492867,"IJsbaanpad 64-A, Amsterdam",,True
+Amsterdam,Reisboekhandel Pied à Terre,52.3721463,4.893437599999999,"Rokin 9, Amsterdam",,True
+Amsterdam,Camping de Badhoeve,52.384618,5.012904699999999,"Uitdammerdijk 10, Amsterdam",,True
+Amsterdam,Stichting Black Jaguar Foundation,52.3368263,4.929385300000001,"H.J.E. Wenckebachweg 123, Amsterdam",,True
+Amsterdam,Willem van den Ham vormgever,52.4019339,4.946019,"Elpermeer 219, Amsterdam",,True
+Amsterdam,Volkstuinpark Buitenzorg,52.38860589999999,4.9267753,"Zamenhofstraat 41, Amsterdam",,True
+Amsterdam,Routewerk,52.3824613,4.869218500000001,"Waterloop 526, Amsterdam",,True
+Amsterdam,tuinpark Nieuwe Levenskracht,52.3489582,4.9555582,Amsterdam,,True
+Amsterdam,Nieuw Vredelust Garden Park,52.318304,4.929140299999999,"4, Buitensingel, Duivendrecht",,True
+Amsterdam,Our Lustoord,52.3190675,4.922084100000001,"Verbindingsweg 1, Duivendrecht",,True
+Amsterdam,"Shoedoctor020 Meester schoenmaker Hillie,s Sneaker Cleaning Service",52.363914,4.935026,"Javastraat 85, Amsterdam",,True
+Amsterdam,Tuinpark Zonnehoek,52.393781,4.8713363,"Archangelweg 3, Amsterdam",,True
+Amsterdam,Wildlife Friends International (WFI),52.3911791,4.890992499999999,"Silodam 248, Amsterdam",,True
+Amsterdam,Volkstuinpark De Bretten,52.3871423,4.81383,"Seineweg 16, Amsterdam",,True
+Amsterdam,Nationaal Dachau Monument,52.32696550000001,4.847855900000001,"Bosbaanweg 1750, Amstelveen",,True
+Amsterdam,Middelpolder,52.3109451,4.893593800000001,"Bankrasweg 6, Amstelveen",,True
+Amsterdam,De Braak,52.3135914,4.850610899999999,"Amsterdamseweg 204, Amstelveen",,True
+Amsterdam,Memorial voor Damslachtoffers 7 mei 1945,52.373402,4.892791,"Dam, Amsterdam",,True
+Amsterdam,De Bary,52.36587,4.8892954,"Herengracht 450, Amsterdam",,True
+Amsterdam,Dijkspark,52.37671169999999,4.912840399999999,"Dijksgracht 5, Amsterdam",,True
+Amsterdam,Van Brienenhofje,52.3786228,4.887058400000001,"Prinsengracht 89-133, Amsterdam",,True
+Amsterdam,Dappertuin,52.3619412,4.929357700000002,"Pieter Nieuwlandstraat 74-84, Amsterdam",,True
+Amsterdam,Hemelse Tuinen,52.3520565,4.920378299999999,"Transvaalkade 93A, Amsterdam",,True
+Amsterdam,Tuinwijck Prachtwijk,52.35922050000001,4.932251399999999,"Van der Vijverstraat 1, Amsterdam",,True
+Amsterdam,Wildernis,52.367736,4.8721188,"Bilderdijkstraat 165F, Amsterdam",,True
+Amsterdam,TuinFietsMan,52.38638109999999,4.920633500000001,"Kievitstraat 14, Amsterdam",,True
+Amsterdam,Floating Garden The Ocean,52.3696734,4.940831399999999,"Entrepothaven, Amsterdam",,True
+Amsterdam,Lab-tuin,52.3635068,4.8670902,"Arie Biemondstraat 111, Amsterdam",,True
+Amsterdam,Familiar Forest,52.3445931,4.887574799999999,"Wielingenstraat 30P, Amsterdam",,True
+Amsterdam,Buurttuin Oost Indisch Groen,52.3622617,4.9460058,"Kramatweg 51, Amsterdam",,True
+Amsterdam,Camping Vliegenbos Amsterdam,52.3905786,4.9282097,"Meeuwenlaan 138, Amsterdam",,True
+Amsterdam,Het Tuin Kafe,52.37650739999999,4.8617256,"Jasper Leijnsenstraat 21, Amsterdam",,True
+Amsterdam,Tuinpark Lissabon,52.3404946,4.814983,"Sloterweg 865, Amsterdam",,True
+Amsterdam,Anna's Tuin & Ruigte,52.353722,4.953307100000001,"Science Park 904, Amsterdam",,True
+Amsterdam,Science4Nature,52.3544534,4.9553595,"Science Park 904, Amsterdam",,True
+Amsterdam,Bajestuin,52.33600920000001,4.9271777,"H.J.E. Wenckebachweg 56, Amsterdam",,True
+Amsterdam,Workout Spot - Freeletics,52.3572917,4.8482985,"Saskia van Uilenburgkade 5, Elsloo",,True
+Amsterdam,Stadstuin Bos En Lommer,52.3761269,4.846326199999999,"cs, Bos en Lommerplantsoen, Amsterdam",,True
+Amsterdam,Sprinklr Planten,52.40715720000001,4.890525600000001,"Displaystraat 19, Amsterdam",,True
+Amsterdam,Soeptuin Bredius,52.3885786,4.847381400000001,"Sloterdijkerweg 20, Amsterdam",,True
+Amsterdam,Tuinpark Rust en Vreugd,52.3835507,4.9667496,"Paterslaan 10, Amsterdam",,True
+Amsterdam,Buurttuin Egelenburg,52.3286688,4.8646862,"Buitenveldert-West, Amsterdam",,True
+Amsterdam,Garden Park Tuinwijck,52.3838541,4.974491999999999,"Parkeerplaats, Parkeerplaats, Liergouw 55, Amsterdam",,True
+Amsterdam,Gardens buikslotermeer,52.3946791,4.96512,"Volendammerweg 305, Amsterdam",,True
+Milan,UNAHOTELS Expo Fiera Milano,45.50208569999999,9.086866500000001,"Via Giovanni Keplero, 12, Pero",,True
+Milan,4cento,45.433456,9.193869900000001,"Via Campazzino, 14, Milano",,True
+Milan,Indro Montanelli Gardens,45.4744489,9.1993654,"Via Palestro, Milano",,True
+Milan,Bar Bianco,45.4736218,9.1774836,"Viale Enrico Ibsen, 4, Milano",,True
+Milan,Camping Village city of Milan,45.47361100000001,9.082797200000002,"Via Gaetano Airaghi, 61, Milano",,True
+Milan,Parco Agricolo Sud Milano - Uffici,45.46734670000001,9.217817600000002,"Viale Piceno, 60, Milano",,True
+Milan,Fondazione Riccardo Catella,45.4852947,9.193078300000002,"Via Gaetano de Castillia, 28, Milano",,True
+Milan,Giardini Pagani Di Fabio Pagani,45.4978189,9.205893399999999,"Via Privata Tarvisio, 19, Milano",,True
+Milan,VerdeMaVerde,45.5154412,9.174464500000001,"Via Fabriano, 8, Milano",,True
+Milan,Garden Anna Stepanovna Politkovskaja,45.48301339999999,9.1876676,"Corso Como, Milano",,True
+Milan,Giardini Pagani di Fabio Pagani,45.492369,9.189921000000002,"Via Lario, 13, Milano",,True
+Milan,Oasi Smeraldino,45.3909831,9.161399699999999,"Viale Monte Amiata, Rozzano",,True
+Milan,Alexander Garden,45.46777509999999,9.191278499999997,"Piazza della Scala, Milano",,True
+Milan,Brera Botanical Garden,45.47091469999999,9.1891832,"Via Brera, 28, Milano",,True
+Milan,"Giardino ""Enzo Biagi""",45.454343,9.1887431,"Via Aldo Lusardi, 8-10, Milano",,True
+Milan,Shared Garden,45.45453099999999,9.1791,"Via Scaldasole, 10/12, Milano",,True
+Milan,WWF Lombardia - WWF Italia per la Lombardia,45.47680939999999,9.183279199999998,"Giardino Pippa Bacca, Via Tommaso da Cazzaniga, Milano",,True
+Milan,Giardino delle Culture,45.46111880000001,9.211109400000002,"Via Emilio Morosini, 8, Milano",,True
+Milan,Community Garden Lea Garofalo,45.48098,9.181711099999998,"Viale Montello, 3, Milano",,True
+Milan,Sir Canapa Hemp Shop Milano - Self Service H24,45.4518096,9.213352,"Viale Umbria, 41, Milano",,True
+Milan,Isola Pepe Verde IPV,45.4861111,9.187222199999997,"Via Guglielmo Pepe, 10, Milano",,True
+Milan,Arredatutto.com,45.450689,9.152837200000002,"Via Savona, 94, Milano",,True
+Milan,Botanical Garden Città Studi,45.475341,9.234534599999998,"Via Camillo Golgi, 18, Milano",,True
+Milan,Villa Mirabello,45.4969854,9.1979863,"Via Villa Mirabello, 6, Milano",,True
+Milan,Piante e Fiori Capoverde,45.4906681,9.2251843,"Via Ruggero Leoncavallo, 16, Milano",,True
+Milan,Agricultural Ticinello Park,45.4275149,9.1821997,"Via Marcello Dudovich, 10, Milano",,True
+Milan,Naviglio Martesana,45.498715,9.214358400000002,"Via Tofane, 49, Milano",,True
+Milan,Orti di via Padova,45.4933403,9.231336200000001,"Via Carlo Esterle, Milano",,True
+Milan,Comunemente Verde,45.5058987,9.1862922,"Via Ausonio Zubiani, 1, Milano",,True
+Milan,Milanosport - Centro Sportivo Cambini Fossati,45.49451099999999,9.2317026,"Via Leonardo Cambini, 4, Milano",,True
+Milan,Eastriver,45.5018574,9.2178352,"Via Jean Jaures, 22, Milano",,True
+Milan,Paesaggiostudio,45.5037467,9.1662302,"Via Don Giovanni Verità, 14, Milano",,True
+Milan,Cascina Bianca,45.4288449,9.154497400000002,"Via Agostino de Pretis, 79, Milano",,True
+Milan,"Ristorante Pizzeria Oasi, carne, pesce, pizza, pizza senza glutine, pizza senza lattosio e pizze Vegane",45.49478389999999,9.140692099999999,"Viale Certosa, 119, Milano",,True
+Milan,Giardini pubblici - Tirana,45.4436463,9.129617500000002,"Piazza Tirana, Milano",,True
+Milan,La Giardineria Milanese,45.49786699999999,9.141265999999998,"Via Panfilo Nuvolone, 32, Milano",,True
+Milan,Parco Monte Stella,45.4902522,9.132444399999999,"Via Enrico Terzaghi, Milano",,True
+Milan,Parco Nord Milano,45.52024429999999,9.1995995,"Via Adriatico, Milano",,True
+Milan,Oasi dei nuovi nati,45.441478,9.082861,"Via Amerigo Vespucci, Cesano Boscone",,True
+Milan,Park Ex Paolo Pini,45.5215291,9.1634847,"Via Ippocrate, Milano",,True
+Milan,Parco Pertini,45.4053822,9.228380800000004,"Via Unica Poasco, 15, Poasco",,True
+Milan,Laghetto Oxy.gen,45.530932,9.1868599,"Via Papa Giovanni XXIII, Bresso",,True
+New York,The Battery,40.70293119999999,-74.0153603,New York,,True
+New York,Jackson Square,40.7389679,-74.0028458,"8 Ave &, Greenwich Avenue, New York",,True
+New York,Pier 63 at Hudson River Park,40.7495244,-74.0092627,"West 23rd Street and, 12th Avenue, New York",,True
+New York,Brooklyn Bridge Park Pier 5,40.6948689,-74.0017282,334 Furman Street,,True
+New York,Brooklyn War Memorial,40.6984595,-73.99067029999999,"195 Cadman Plaza West, Brooklyn",,True
+New York,La Lanterna di Vittorio,40.7306651,-74.0000496,"129 MacDougal Street, New York",,True
+New York,Calvary Cemetery,40.73522250000001,-73.9135952,"49-02 Laurel Hill Boulevard, Woodside",,True
+New York,Juliette Restaurant,40.7170111,-73.95906939999999,"135 North 5th Street, Brooklyn",,True
+New York,One Brooklyn Bridge Park,40.69329700000001,-73.9995757,"360 Furman Street, Brooklyn",,True
+New York,Pier 25 at Hudson River Park,40.7202901,-74.0141132,"West Street, New York",,True
+New York,Aurora Brooklyn,40.7156519,-73.9647449,"70 Grand Street, Brooklyn",,True
+New York,Battery Park City Parks,40.7067678,-74.0171771,"75 Battery Place, New York",,True
+New York,BOTTINO | modern italian dining | garden | events,40.7484846,-74.0033127,"246 10th Avenue, New York",,True
+New York,Overpeck County Park,40.8643266,-73.9969858,"40 Fort Lee Road, Leonia",,True
+New York,West 4th Street Courts,40.7312111,-74.0008609,"272 6th Avenue, New York",,True
+New York,"Fort Lee Historic Park, Palisades Interstate Park Commission",40.85027849999999,-73.9624813,"Hudson Terrace, Fort Lee",,True
+New York,Weehawken Waterfront Park and Recreation Center,40.7644673,-74.0190853,"1 Port Imperial Boulevard, Weehawken",,True
+New York,The Wyckoff House Museum,40.6443479,-73.92082839999999,"5816 Clarendon Road, Brooklyn",,True
+New York,Conservancy-Historic Battery,40.7084692,-74.01059479999999,"120 Broadway, New York",,True
+New York,TCC Group Inc,40.7474652,-73.9929135,"333 7th Avenue 9th floor, New York",,True
+Portland,Portland Japanese Garden,45.5188634,-122.7080354,"611 Southwest Kingston Avenue, Portland",,True
+Portland,Pittock Mansion,45.5252061,-122.7162689,"3229 Northwest Pittock Drive, Portland",,True
+Portland,Lan Su Chinese Garden,45.5256321,-122.6729955,"239 Northwest Everett Street, Portland",,True
+Portland,The Grotto,45.5532151,-122.5735354,"8840 Northeast Skidmore Street, Portland",,True
+Portland,International Rose Test Garden,45.51895239999999,-122.7052686,"400 Southwest Kingston Avenue, Portland",,True
+Portland,Off-Leash Dog Park,45.5676795,-122.6222476,"4050 Northeast Holman Street, Portland",,True
+Portland,Macleay Park,45.5283348,-122.7214672,"2960 Northwest Upshur Street, Portland",,True
+Portland,Director Park,45.5186898,-122.6814688,"815 Southwest Park Avenue, Portland",,True
+Portland,Salmon Street Springs,45.5153495,-122.6732909,"1000 Southwest Naito Parkway, Portland",,True
+Portland,Marquam Nature Park,45.502804,-122.6917404,"Main entrance:, Southwest Marquam Street, Portland",,True
+Portland,Leach Botanical Garden,45.475173,-122.5356262,"6704 Southeast 122nd Avenue, Portland",,True
+Portland,Esther Short Park and Playground,45.6267119,-122.6748986,"605 Esther Street, Vancouver",,True
+Portland,Powell Butte Nature Park,45.49069609999999,-122.4969916,"16160 Southeast Powell Boulevard, Portland",,True
+Portland,Rocky Butte Natural Area,45.5464192,-122.5659452,"3102 Northeast Rocky Butte Road, Portland",,True
+Portland,Duniway Park Lilac Garden,45.5027273,-122.6870355,"&, SW 6th Ave & SW Sheridan St, Portland",,True
+Portland,Central Parking,45.5140573,-122.6759259,"123 Southwest Jefferson Street, Portland",,True
+Portland,Smith and Bybee Wetlands Natural Area,45.6166313,-122.7185057,"5300 North Marine Drive, Portland",,True
+Portland,Mill Ends Park - Worlds Smallest Park,45.5161981,-122.6732319,"56 Southwest Taylor Street, Portland",,True
+Portland,Clinton City Park,45.5035462,-122.604988,"5576 Southeast Division Street, Portland",,True
+Portland,Ladd Circle Park & Rose Gardens,45.50869269999999,-122.6493549,"1988 Southeast Mulberry Avenue, Portland",,True
+Portland,Mount Talbert Nature Park,45.4205094,-122.5524356,"10945 Southeast Mather Road, Clackamas",,True
+Portland,April Hill City Park,45.47092920000001,-122.7353035,Portland,,True
+Portland,Commonwealth Lake Park,45.51089409999999,-122.8102405,"SW Butner Rd &, Southwest Huntington Avenue, Portland",,True
+Portland,Lake Oswego Parks & Recreation,45.4193373,-122.6676796,"380 A Avenue, Lake Oswego",,True
+Portland,Westlake Park,45.4253979,-122.726774,"14165 Bunick Drive, Lake Oswego",,True
+Portland,Tualatin Hills Nature Park,45.4982312,-122.8396247,"15655 Southwest Millikan Way, Beaverton",,True
+Portland,Fountains Statues and Pottery,45.50444,-122.574417,"8560 Southeast Division Street, Portland",,True
+Portland,Sellwood Off-Leash Dog Park,45.4665078,-122.6634583,"7987 Southeast Grand Avenue, Portland",,True
+Portland,Tualatin Hills Nature Center,45.49809,-122.839507,"15655 Southwest Millikan Way, Beaverton",,True
+Portland,Fort Vancouver National Historic Site,45.6224737,-122.66321,"1001 East 5th Street, Vancouver",,True
+Portland,Mary S. Young Park,45.3810341,-122.6304188,"19900 Willamette Drive, West Linn",,True
+Houston,Forest Park Lawndale Funeral Home & Forest Park Lawndale,29.7202661,-95.30510459999999,"6900 Lawndale Street, Houston",,True
+Houston,Lakeview RV Resort by QRV,29.652502,-95.445126,"11991 South Main Street, Houston",,True
+Houston,"Bayou Bend Collection and Gardens, Museum of Fine Arts, Houston",29.7606593,-95.42169270000001,"6003 Memorial Drive, Houston",,True
+Houston,Houston Sports Park,29.6380273,-95.3953253,"12131 Kirby Drive, Houston",,True
+Houston,Lee and Joe Jamail Skatepark,29.76213570000001,-95.3769654,"103 Sabine Street, Houston",,True
+Houston,Tom Bass Regional Park Section III,29.58974049999999,-95.3564044,"15108 Cullen Boulevard, Houston",,True
+Houston,Bane Park,29.8721298,-95.5415629,"9600 West Little York Road, Houston",,True
+Houston,Jetstream RV Resort at Pearland,29.5952947,-95.38087790000002,"2850 South Sam Houston Parkway East, Houston",,True
+Houston,Harris County Parks Department,29.8203805,-95.6137534,"3535 War Memorial Street Dr, Houston",,True
+Houston,Integrity Funeral Home at Forest Lawn Cemetery,29.62682989999999,-95.2628198,"8601 Almeda-Genoa Road, Houston",,True
+Houston,Ervan Chew Dog Park,29.732712,-95.4023052,"4502 Dunlavy Street, Houston",,True
+Houston,Nature Discovery Center,29.7001439,-95.4517592,"7112 Newcastle Street, Bellaire",,True
+Houston,Japanese Garden,29.7192717,-95.39224949999999,"6000 Fannin Street, Houston",,True
+Houston,Brookside Funeral Home & Memorial Park,29.9167937,-95.30972489999999,"13747 Eastex Freeway, Houston",,True
+Houston,Danny Jackson Family Bark Park,29.726271,-95.45711100000001,"4828 1/2 Loop Central Drive, Houston",,True
+Houston,Terry Hershey Park,29.7817875,-95.623719,"15200 Memorial Drive, Houston",,True
+Houston,Memorial Oaks Funeral Home & Cemetery,29.7839865,-95.6144808,"13001 Katy Freeway, Houston",,True
+Houston,Clinton Skatepark,29.745026,-95.2610712,"200 Mississippi Street, Houston",,True
+Houston,AllStar RV Resort by QRV,29.6636437,-95.55024519999999,"10650 Southwest Plaza Court, Houston",,True
+Houston,RISE Soccer Club: McGovern Park,29.70035350000001,-95.4381452,"7222 Braes Boulevard, Houston",,True
+Houston,West Webster Dog Park,29.7517325,-95.38266709999999,"1913 Gillette Street, Houston",,True
+Houston,Sheldon Lake State Park & Environmental Learning Center,29.8832317,-95.1644376,"14140 Garrett Road, Houston",,True
+Houston,Officer Lucy Dog Park,29.6909746,-95.4477182,"4300 Edith Street, Bellaire",,True
+Houston,Gene Green Park,29.8274704,-95.1608523,"6500 East Sam Houston Parkway North, Houston",,True
+Houston,Zone 9 Tropicals,29.7894764,-95.39446129999999,"1015 Arlington Street, Houston",,True
+Houston,Mud,29.9113418,-95.4432413,"2265 Stuebner Park Lane, Houston",,True
+Houston,Earthman Resthaven Funeral Home and Cemetery,29.9611212,-95.41728719999999,"13102 North Freeway, Houston",,True
+Houston,Locust Park,29.7097462,-95.45771409999999,"4616 Locust Street, Bellaire",,True
+Houston,Cane River Gardens,29.776295,-95.328099,"4205 Lyons Avenue, Houston",,True
+Houston,Paseo Park,29.705687,-95.46426579999999,"5000 Bellaire Boulevard, Bellaire",,True
+Houston,Westbury Community Garden,29.6592528,-95.4777383,"5322 West Bellfort Avenue #100, Houston",,True
+Houston,"Houston Pools, Fountains, and Spas",29.8048412,-95.4210281,"1223 West 21st Street, Houston",,True
+Houston,Houston Solar Fountains - Fountains Feng Shui,29.7601715,-95.3613701,"1046 Prairie Street, Houston",,True
