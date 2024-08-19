@@ -1,42 +1,29 @@
 import streamlit as st
-import pandas as pd
-from backend import load_city_data, load_models, preprocess_input, make_prediction
+from backend import prepare_input, make_prediction, original_data
 
-# Load data and models
-city_data = load_city_data()
-base_models, meta_model, scaler = load_models()
+st.title("Life Expectancy Prediction")
 
-st.title("Life Expectancy Predictor")
+st.write("Select your city and enter your health information:")
 
-# City selection
-city = st.selectbox("Select a city", city_data['City'].tolist())
+# Extract unique city names from the dataset
+cities = original_data['city'].unique()
 
-# Health metrics inputs
-obesity = st.radio("Obesity (BMI > 30)", ["No", "Yes"])
-smoking = st.radio("Smoking", ["No", "Yes"])
-copd = st.radio("COPD", ["No", "Yes"])
-depression = st.radio("Depression", ["No", "Yes"])
+# User inputs
+city_name = st.selectbox("Select your city:", cities)
+obesity = st.radio("Are you obese?", ("YES", "NO"))
+smoker = st.radio("Are you a smoker?", ("YES", "NO"))
+copd = st.radio("Do you have COPD?", ("YES", "NO"))
+depression = st.radio("Do you have depression?", ("YES", "NO"))
 
+# When the user clicks the button
 if st.button("Predict Life Expectancy"):
-    # Get city metrics
-    city_metrics = city_data[city_data['City'] == city].iloc[0]
-    
-    # Combine city metrics with health inputs
-    user_inputs = {
-        'obesity': obesity,
-        'smoking': smoking,
-        'copd': copd,
-        'depression': depression
-    }
-    
-    # Preprocess input
-    preprocessed_input = preprocess_input(city_metrics, user_inputs, scaler)
-    
-    # Make prediction
-    prediction = make_prediction(preprocessed_input, (base_models, meta_model))
-    
-    st.subheader(f"Predicted Life Expectancy: {prediction:.2f} years")
-
-# Display city metrics for transparency
-st.write("City Metrics:")
-st.write(city_metrics[['population_city', 'greenspacearea_km2', 'AQI']])
+    try:
+        # Prepare the input data
+        input_data = prepare_input(city_name, obesity, smoker, copd, depression)
+        
+        # Make the prediction
+        prediction = make_prediction(input_data)
+        
+        st.write(f"Predicted Life Expectancy: {prediction:.2f} years")
+    except IndexError:
+        st.error("City data not found. Please make sure the city is correctly selected.")
