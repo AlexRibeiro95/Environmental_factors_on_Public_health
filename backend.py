@@ -68,20 +68,31 @@ def prepare_input(city_name, obesity, smoker, copd, depression):
 
     return input_vector
 
-def make_prediction(input_data):
+def make_prediction(input_data, smoker, copd, obesity, depression):
     """
-    Make a prediction using the stacked model.
+    Make a prediction using the stacked model and adjust it based on health conditions.
     """
     # Generate predictions from base models
     base_predictions = np.column_stack([model.predict(input_data) for model in base_models])
 
     # Use the meta model to make the final prediction
-    prediction = meta_model.predict(base_predictions)
+    prediction = meta_model.predict(base_predictions)[0]
 
-    # Since the target is not scaled, return the prediction directly
-    return prediction[0]
+    # Adjust the prediction based on the user's health metrics
+    if smoker == "YES" and copd == "YES":
+        prediction -= 15  # Strong adjustment for combined smoking and COPD
+    elif copd == "YES":
+        prediction -= 10  # COPD alone
+    elif smoker == "YES":
+        prediction -= 7  # Smoking alone
 
-    # Inverse transform to get the prediction in the original scale
-    original_scale_prediction = target_scaler.inverse_transform(scaled_prediction.reshape(-1, 1))
+    if obesity == "YES":
+        prediction -= 7  # Obesity adjustment
 
-    return original_scale_prediction[0][0]
+    if depression == "YES":
+        prediction -= 1.5  # Depression adjustment
+
+    # Ensure the prediction doesn't drop below a reasonable threshold
+    prediction = max(prediction, 0)
+
+    return prediction
