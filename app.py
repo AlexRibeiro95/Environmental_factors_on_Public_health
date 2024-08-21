@@ -86,6 +86,14 @@ elif page == "Machine Learning":
 # Page 4: Calculator
 elif page == "Calculator":
     st.title("Life Expectancy Calculator")
+
+    # Introduction to the Calculator
+    st.write("""
+    Welcome to the Life Expectancy Calculator. This tool helps estimate your life expectancy based on various health factors such as smoking status, obesity, COPD, and depression.
+    Enter your details below to receive an estimate along with tailored health suggestions.
+    """)
+    # Disclaimer
+    st.write("_Disclaimer: This tool is for informational purposes only and does not constitute medical advice. Always consult with a healthcare professional for personalized medical advice._")
     
     # Collect user inputs for health conditions
     city_name = st.selectbox("Select your city", original_data['city'].unique())
@@ -107,3 +115,5 @@ elif page == "Calculator":
         suggestions = get_suggestions_from_openai(smoker, copd, obesity, depression)
         st.write("### Health Suggestions")
         st.write(suggestions)
+    
+    
