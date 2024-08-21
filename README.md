@@ -4,34 +4,15 @@
 1. [Introduction](#introduction)
 2. [Objective](#objective)
 3. [Data Collection](#data-collection)
-    - [Source of Data](#source-of-data)
-    - [Data Acquisition Process](#data-acquisition-process)
-4. [Data Preprocessing](#data-preprocessing)
-    - [Data Cleaning](#data-cleaning)
-    - [Feature Engineering](#feature-engineering)
-    - [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
-5. [Model Selection and Tuning](#model-selection-and-tuning)
-    - [Models Used](#models-used)
-    - [Hyperparameter Tuning](#hyperparameter-tuning)
-    - [Overfitting Check](#overfitting-check)
-    - [Stacked Model](#stacked-model)
-6. [Model Performance](#model-performance)
-    - [Performance Metrics](#performance-metrics)
-    - [Final Stacked Model Results](#final-stacked-model-results)
+4. [Data Preprocessing](#data-preprocessing)  
+5. [Model Selection and Tuning](#model-selection-and-tuning)  
+6. [Model Performance](#model-performance)    
 7. [Feature Importance](#feature-importance)
-    - [SHAP Analysis](#shap-analysis)
-8. [Deployment](#deployment)
-    - [Streamlit Application](#streamlit-application)
-9. [Challenges and Future Work](#challenges-and-future-work)
-    - [Challenges Faced](#challenges-faced)
-    - [Future Enhancements](#future-enhancements)
+8. [Deployment](#deployment)  
+9. [Challenges and Future Work](#challenges-and-future-work) 
 10. [Conclusion](#conclusion)
-    - [Summary](#summary)
-    - [Impact](#impact)
 11. [References](#references)
-12. [Appendix](#appendix)
-    - [Code Snippets](#code-snippets)
-    - [Additional Visualizations](#additional-visualizations)
+
 
 ---
 
@@ -136,10 +117,6 @@ Reflected on the potential impact of the project on public health awareness and 
 - **CDC Data**: https://cdi.cdc.gov/
 - **OpenWeather API**: https://openweathermap.org/api
 
-## Appendix
-
-### Code Snippets
-Included important code snippets with explanations.
 
 ### Additional Visualizations
 Provided extra visualizations that support the findings in the main body.
