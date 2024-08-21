@@ -55,7 +55,43 @@ def get_suggestions_from_openai(smoker, copd, obesity, depression, max_tokens=20
         st.error(f"Error fetching suggestions: {e}")
         return "Failed to retrieve suggestions. Please try again later."
 
-# Sidebar Navigation
+# Set the page layout to wide
+st.set_page_config(layout="wide")
+
+# Apply custom CSS for background color
+st.markdown(
+    """
+    <style>
+    /* Set the background color for the entire page */
+    .stApp {
+        background-color: #7BAA89; /* Light grey color, replace with your desired color */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# Custom CSS to change the sidebar background color to match the logo's background
+st.markdown(
+    """
+    <style>
+    /* Change the background color of the sidebar */
+    [data-testid="stSidebar"] {
+        background-color: #657781; /* The color code you provided */
+    }
+    /* Optional: Change the text color in the sidebar */
+    [data-testid="stSidebar"] .css-1d391kg {
+        color: white;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# Display the logo in the sidebar
+st.sidebar.image("/Users/alexandreribeiro/Documents/GitHub/final_project/visualizations/logo.png", use_column_width=True)
+
+# Continue with the rest of your sidebar content
 st.sidebar.title("Navigation")
 page = st.sidebar.radio("Go to", ["Project Overview", "Data Collection", "Machine Learning", "Calculator"])
 
