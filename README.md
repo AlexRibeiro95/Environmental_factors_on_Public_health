@@ -3,16 +3,13 @@
 ## Index 
 
 1. [Introduction](#introduction)
-2. [Objective](#objective)
-3. [Data Collection](#data-collection)
-4. [ML-Pipeline](#Machine-Learning-Pipeline)  
-5. [Machine Learning Process Summary](#Machine-Learning-Process-Summary)  
-6. [Model Performance](#model-performance)    
-7. [Feature Importance](#feature-importance)
-8. [Deployment](#deployment)  
-9. [Challenges and Future Work](#challenges-and-future-work) 
-10. [Conclusion](#conclusion)
-11. [Credits and Management/Presentation Links](#Credits-and-Management/Presentation-Links)
+2. [Data Collection](#data-collection)
+3. [ML-Pipeline](#Machine-Learning-Pipeline)  
+4. [Machine Learning Process Summary](#Machine-Learning-Process-Summary)  
+5. [Model Performance](#model-performance)    
+6. [Feature Importance](#feature-importance)  
+7. [Conclusion](#conclusion)
+8. [Credits and Management/Presentation Links](#Credits-and-Management/Presentation-Links)
 
 ---
 
@@ -80,58 +77,61 @@
 
 ### Baseline Results:
 
-![Baseline Barplot](visualizations/Barplot_Models_Performance_Baseline.png)
 ![Baseline Performance](visualizations/baseline_models_performance.png)
 
 ### Hyperparameter Tuning
-- **GridSearchCV**: Used to find the best hyperparameters for Random Forest, XGBoost, and Decision Tree models.
 - **Cross-Validation**: Performed 5-fold cross-validation to validate model performance.
 
+![Cross validation](visualizations/Cross-validation.png)
+
+**GridSearchCV**: Used to find the best hyperparameters for Random Forest, XGBoost, and Decision Tree models.
+
+- Random Forest = {'max_depth': None, 'max_features': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 300}
+- XGBoost = {'colsample_bytree': 0.9, 'learning_rate': 0.1, 'max_depth': 7, 'n_estimators': 300, 'subsample': 0.9}
+- Decision Tree = {'max_depth': 40, 'max_features': None, 'min_samples_leaf': 1, 'min_samples_split': 10}
+
 ### Overfitting Check
+
 - **Overfitting Mitigation**: Checked for overfitting by comparing performance on training and test data.
 
 ### Stacked Model
+
 - **Meta-Model**: A Linear Regression model was used to stack the predictions of the best-performing models (Random Forest, XGBoost, Decision Tree).
 - **Final Model Training**: The final stacked model was trained on the entire dataset.
 
 ## Model Performance
 
-### Performance Metrics
-- **Evaluation Metrics**: The models were evaluated using Mean Absolute Error (MAE), Mean Squared Error (MSE), and R² score.
-- **Comparison of Models**: Detailed comparison of model performance metrics.
-
 ### Final Stacked Model Results
 - **Training vs. Test Performance**: Comparison of performance metrics for the final stacked model on both training and test data.
+
+![Grouped Final Plot](visualizations/Grouplot_final_staked_model.png)
 
 ## Feature Importance
 
 ### SHAP Analysis
 - **SHAP Values**: Used to explain the impact of each feature on the model's predictions.
-- **Key Features**: Identified the most significant features affecting life expectancy predictions.
 
-## Deployment
+![SHAP](visualizations/SHAP_features.png)
 
-### Streamlit Application
-- **Overview**: Developed an interactive web application using Streamlit where users can input their data to predict life expectancy.
-- **User Instructions**: Detailed instructions on how to use the app, interpret the results, and receive health suggestions.
+**Key Features**:
+- Smoking Rate: Both adjusted_smoking_rate and its inverse are the most impactful features, indicating that smoking status is a major predictor of life expectancy or health outcomes.
+- Population Size: population_city also shows significant influence, suggesting that urbanization or population-related factors play a crucial role in the model’s predictions.
+- Obesity Rate: adjusted_obesity_rate and its inverse are also important, reflecting the well-known impact of obesity on health.
 
-## Challenges and Future Work
-
-### Challenges Faced
-- **Data Limitations**: Discussed challenges such as missing data, computational constraints, and model complexity.
-- **Overfitting**: Addressed the challenge of overfitting in model training.
-
-### Future Enhancements
-- **Improving Model Accuracy**: Suggestions for incorporating additional data sources and refining the model.
-- **Wider Deployment**: Plans to deploy the model in different environments for broader use.
+**Environmental Features**:
+- AQI (Air Quality Index): Positioned in the middle of the SHAP summary plot, AQI has a moderate influence on the model’s predictions. This suggests that while air quality is not the most dominant factor, it still significantly contributes to the model’s decision-making process, aligning with real-world evidence that environmental factors affect health outcomes.
 
 ## Conclusion
 
 ### Summary
-Summarized the key findings and achievements of the project.
+
+- **Model Performance:** The final stacked model exhibited strong performance, with high R² scores of 0.8413 on the training set and 0.8564 on the test set. The close alignment between these scores demonstrates that the model generalizes well, avoiding overfitting.
+- **Error Metrics:** The Mean Absolute Error (MAE) and Mean Squared Error (MSE) were slightly lower on the test set compared to the training set, indicating the model’s robustness and reliability in predicting unseen data.
+- **Exploratory Analysis:** While we did not conclusively prove a direct relationship between green spaces and the target variable, the analytical process allowed us to fine-tune our models and set the stage for more refined future research.
+
 
 ### Impact
-Reflected on the potential impact of the project on public health awareness and policy-making.
+- The potential impact of this project extends beyond the technical achievements. By exploring the relationship between environmental factors like green spaces and public health outcomes, this work contributes to the broader conversation about the importance of urban planning and public health policies.
 
 
 ## Credits and Management/Presentation Links
