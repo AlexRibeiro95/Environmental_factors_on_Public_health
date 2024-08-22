@@ -5,7 +5,7 @@
 2. [Objective](#objective)
 3. [Data Collection](#data-collection)
 4. [Data Preprocessing](#data-preprocessing)  
-5. [Model Selection and Tuning](#model-selection-and-tuning)  
+5. [Machine Learning Process Summary](#Machine-Learning-Process-Summary)  
 6. [Model Performance](#model-performance)    
 7. [Feature Importance](#feature-importance)
 8. [Deployment](#deployment)  
@@ -50,7 +50,7 @@ The primary objective of this project is to develop a robust machine learning mo
 ### Exploratory Data Analysis (EDA)
 - **Correlation Matrix**: Analyzed correlations between different features to understand relationships and dependencies.
 
-## Model Selection and Tuning
+## Machine Learning Process Summary
 
 ### Models Used
 - **Linear Regression**
