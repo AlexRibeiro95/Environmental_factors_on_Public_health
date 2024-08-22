@@ -7,6 +7,8 @@ from dotenv import load_dotenv
 import seaborn as sns
 import folium
 from streamlit_folium import folium_static
+import pandas as pd
+import plotly.express as px
 
 # Load environment variables from .env file
 
@@ -59,7 +61,7 @@ def get_suggestions_from_openai(smoker, copd, obesity, depression, max_tokens=20
         return "Failed to retrieve suggestions. Please try again later."
 
 # Set the page layout to wide
-st.set_page_config(layout="wide")
+st.set_page_config(layout="centered")
 
 # Apply custom CSS for background color
 st.markdown(
@@ -137,7 +139,7 @@ st.sidebar.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-page = st.sidebar.radio("", ["Project Overview", "Data Exploring","Findings","Machine Learning", "Calculator"])
+page = st.sidebar.radio("", ["Project Overview", "Data Exploration", "Findings","Machine Learning", "Calculator"])
 
 # Page 1: Project Overview
 if page == "Project Overview":
@@ -154,7 +156,7 @@ if page == "Project Overview":
     As we delved deeper into the data, it became evident that air quality might mediate the relationship between green spaces and health. Poor air quality is a well-documented risk factor for a variety of health issues, and it can diminish the potential benefits of green spaces. Therefore, AQI became a critical variable in our analysis, allowing us to explore not only the direct impact of green spaces but also how air quality might influence this relationship.
     """)
 
-# Page 2: Data Exploring
+# Page 2: Data Exploration
 if page == "Data Exploration":
     st.title("Data Exploration")
 
@@ -164,17 +166,29 @@ if page == "Data Exploration":
 
     This section allows you to explore various public health metrics collected from different cities. 
     You can select specific metrics, compare them across different cities, and even visualize the data on an interactive map.
+    The adjusted metrics refer to a city level adjustment based on the national average.
 
     Use the options below to start exploring the data. You can select a metric to visualize across all cities, compare specific cities, or see how these metrics are distributed geographically.
     """)
 
-
     # Load the dataset
     df = pd.read_csv('https://raw.githubusercontent.com/AlexRibeiro95/Environmental_factors_on_Public_health/main/data/clean/final_dataset.csv')
 
+    # Display the dataset
+    st.write("#### Full Dataset")
+    st.dataframe(df)
+
+    # Add a download button for the dataset
+    st.download_button(
+        label="Download Full Dataset",
+        data=df.to_csv().encode('utf-8'),
+        file_name='final_dataset.csv',
+        mime='text/csv',
+    )
+
     # List of health metrics available in the dataset
     metrics = [
-        'obesity_rate', 'smoking_rate', 'exercising_rate', 'adjusted_obesity_rate',
+        'adjusted_obesity_rate',
         'adjusted_smoking_rate', 'adjusted_exercising_rate', 'adjusted_chronic_rate',
         'adjusted_life_expectancy', 'adjusted_copd_rate', 'adjusted_depression_rate',
         'life_expectancy', 'AQI'
@@ -182,15 +196,6 @@ if page == "Data Exploration":
 
     # User selects a metric to explore
     selected_metric = st.selectbox("Select a health metric to visualize:", metrics)
-
-    # Plot the selected metric for all cities
-    plt.figure(figsize=(10, 6))
-    sns.barplot(x='city', y=selected_metric, data=df)
-    plt.xticks(rotation=90)
-    plt.title(f"Comparison of {selected_metric} Across Cities")
-    plt.ylabel(selected_metric.replace('_', ' ').title())
-    plt.xlabel("City")
-    st.pyplot(plt)
 
     # Show the metric on a map
     map_center = [df['lat'].mean(), df['lng'].mean()]
@@ -216,16 +221,10 @@ if page == "Data Exploration":
         # Filter data for the selected cities
         filtered_data = df[df['city'].isin(selected_cities)]
         
-        # Display the comparison
-        st.write(filtered_data[['city'] + metrics])
-        
-        # Plot the selected metric for these cities
-        plt.figure(figsize=(10, 6))
-        sns.barplot(x='city', y=selected_metric, data=filtered_data)
-        plt.title(f"Comparison of {selected_metric} for Selected Cities")
-        plt.ylabel(selected_metric.replace('_', ' ').title())
-        plt.xlabel("City")
-        st.pyplot(plt)
+        # Display the comparison using Plotly Express
+        fig = px.bar(filtered_data, x='city', y=selected_metric, title=f"Comparison of {selected_metric} for Selected Cities")
+        fig.update_layout(xaxis_title="City", yaxis_title=selected_metric.replace('_', ' ').title())
+        st.plotly_chart(fig)
 
 # Page 3: Findings
 elif page == "Findings":
