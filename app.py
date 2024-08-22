@@ -25,17 +25,16 @@ openai.api_key = api_key
 def get_suggestions_from_openai(smoker, copd, obesity, depression, max_tokens=200):
     prompt = f"Based on the user's health data, generate health suggestions: smoker: {smoker}, copd: {copd}, obesity: {obesity}, depression: {depression}."
     
-    # Check if the API key is set
-    api_key = os.getenv("OPENAI_API_KEY")
+    # Get the API key from Streamlit secrets
+    api_key = st.secrets["OPENAI_API_KEY"]
+    
     if not api_key:
-        st.error("OpenAI API key is not set. Please set the OPENAI_API_KEY environment variable.")
+        st.error("OpenAI API key is not set. Please add it to your Streamlit secrets.")
         return "Unable to generate suggestions due to missing API key."
 
     try:
-        # Initialize the OpenAI client with the API key
         client = OpenAI(api_key=api_key)
         
-        # Use the chat.completions.create method for chat-based models like gpt-3.5-turbo
         response: ChatCompletion = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
@@ -46,19 +45,15 @@ def get_suggestions_from_openai(smoker, copd, obesity, depression, max_tokens=20
             max_tokens=max_tokens
         )
         
-        # Parse the response
         suggestions = response.choices[0].message.content.strip()
         
         return suggestions
     
     except OpenAIError as e:
-        # Handle any errors from the API
-        error_message = str(e)
-        st.error(f"Error fetching suggestions: {error_message}")
+        st.error(f"Error fetching suggestions: {str(e)}")
         return "Failed to retrieve suggestions. Please check your API key and try again later."
     
     except Exception as e:
-        # Handle any unexpected errors
         st.error(f"Unexpected error: {str(e)}")
         return "An unexpected error occurred. Please try again later."
 
