@@ -84,7 +84,7 @@
 
 ![Cross validation](visualizations/Cross-validation.png)
 
-- **GridSearchCV**: Used to find the best hyperparameters for Random Forest, XGBoost, and Decision Tree models.
+**GridSearchCV**: Used to find the best hyperparameters for Random Forest, XGBoost, and Decision Tree models.
 
 - Random Forest = {'max_depth': None, 'max_features': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 300}
 - XGBoost = {'colsample_bytree': 0.9, 'learning_rate': 0.1, 'max_depth': 7, 'n_estimators': 300, 'subsample': 0.9}
@@ -124,10 +124,14 @@
 ## Conclusion
 
 ### Summary
-Summarized the key findings and achievements of the project.
+
+- **Model Performance:** The final stacked model exhibited strong performance, with high R² scores of 0.8413 on the training set and 0.8564 on the test set. The close alignment between these scores demonstrates that the model generalizes well, avoiding overfitting.
+- **Error Metrics:** The Mean Absolute Error (MAE) and Mean Squared Error (MSE) were slightly lower on the test set compared to the training set, indicating the model’s robustness and reliability in predicting unseen data.
+- **Exploratory Analysis:** While we did not conclusively prove a direct relationship between green spaces and the target variable, the analytical process allowed us to fine-tune our models and set the stage for more refined future research.
+
 
 ### Impact
-Reflected on the potential impact of the project on public health awareness and policy-making.
+- The potential impact of this project extends beyond the technical achievements. By exploring the relationship between environmental factors like green spaces and public health outcomes, this work contributes to the broader conversation about the importance of urban planning and public health policies.
 
 
 ## Credits and Management/Presentation Links
