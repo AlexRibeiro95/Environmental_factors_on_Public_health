@@ -19,7 +19,7 @@ load_dotenv()
 
 # Load your API key securely
 
-api_key = os.getenv("GPT_API_KEY")
+api_key = os.getenv("OPENAI_API_KEY")
 openai.api_key = api_key
 
 
