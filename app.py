@@ -69,20 +69,6 @@ def get_suggestions_from_openai(smoker, copd, obesity, depression, max_tokens=20
         st.error(f"Unexpected error: {str(e)}")
         return "An unexpected error occurred. Please try again later."
 
-# Usage in your Streamlit app
-if __name__ == "__main__":
-    st.title("Health Suggestion Generator")
-    
-    # Add input fields for health data
-    smoker = st.checkbox("Smoker")
-    copd = st.checkbox("COPD")
-    obesity = st.checkbox("Obesity")
-    depression = st.checkbox("Depression")
-    
-    if st.button("Get Suggestions"):
-        suggestions = get_suggestions_from_openai(smoker, copd, obesity, depression)
-        st.write(suggestions)
-
 # Set the page layout to wide
 st.set_page_config(layout="centered")
 
