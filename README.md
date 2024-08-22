@@ -80,14 +80,21 @@
 
 ### Baseline Results:
 
-![Baseline Barplot](visualizations/Barplot_Models_Performance_Baseline.png)
 ![Baseline Performance](visualizations/baseline_models_performance.png)
 
 ### Hyperparameter Tuning
-- **GridSearchCV**: Used to find the best hyperparameters for Random Forest, XGBoost, and Decision Tree models.
 - **Cross-Validation**: Performed 5-fold cross-validation to validate model performance.
 
+![Cross validation](visualizations/Cross-validation.png)
+
+- **GridSearchCV**: Used to find the best hyperparameters for Random Forest, XGBoost, and Decision Tree models.
+
+- Random Forest = {'max_depth': None, 'max_features': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 300}
+- XGBoost = {'colsample_bytree': 0.9, 'learning_rate': 0.1, 'max_depth': 7, 'n_estimators': 300, 'subsample': 0.9}
+- Decision Tree = {'max_depth': 40, 'max_features': None, 'min_samples_leaf': 1, 'min_samples_split': 10}
+
 ### Overfitting Check
+
 - **Overfitting Mitigation**: Checked for overfitting by comparing performance on training and test data.
 
 ### Stacked Model
@@ -107,7 +114,13 @@
 
 ### SHAP Analysis
 - **SHAP Values**: Used to explain the impact of each feature on the model's predictions.
-- **Key Features**: Identified the most significant features affecting life expectancy predictions.
+
+![SHAP](visualizations/SHAP_features.png)
+
+**Key Features**:
+- Smoking Rate: Both adjusted_smoking_rate and its inverse are the most impactful features, indicating that smoking status is a major predictor of life expectancy or health outcomes.
+- Population Size: population_city also shows significant influence, suggesting that urbanization or population-related factors play a crucial role in the model’s predictions.
+- Obesity Rate: adjusted_obesity_rate and its inverse are also important, reflecting the well-known impact of obesity on health.
 
 ## Deployment
 
