@@ -1,8 +1,7 @@
-# Environmental Factors on Public Health 🌍
-
 ![Logo](visualizations/logo.png)
 
-## Table of Contents
+## Index 
+
 1. [Introduction](#introduction)
 2. [Objective](#objective)
 3. [Data Collection](#data-collection)
@@ -18,9 +17,13 @@
 ---
 
 ## Introduction
-Welcome to the Life Expectancy Prediction Project. This project aims to predict life expectancy based on various health metrics such as smoking status, obesity, air quality, and more. The model leverages advanced machine learning techniques to provide insights that can be used to improve public health strategies.
+
+**Welcome to the Environmental Factors on Public Health project.** 🌍
+
+- This project aims to predict life expectancy based on various health metrics such as smoking status, obesity, air quality, and more. The model leverages advanced machine learning techniques to provide insights that can be used to improve public health strategies.
 
 ## Objective
+
 The primary objective of this project is to develop a robust machine learning model that accurately predicts life expectancy using a combination of health, environmental, and demographic data.
 
 ## Data Collection
