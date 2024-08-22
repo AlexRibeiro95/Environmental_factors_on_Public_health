@@ -22,13 +22,6 @@ load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
 openai.api_key = api_key
 
-
-import os
-from openai import OpenAI
-from openai.types.chat.chat_completion import ChatCompletion
-from openai import OpenAIError
-import streamlit as st
-
 def get_suggestions_from_openai(smoker, copd, obesity, depression, max_tokens=200):
     prompt = f"Based on the user's health data, generate health suggestions: smoker: {smoker}, copd: {copd}, obesity: {obesity}, depression: {depression}."
     
