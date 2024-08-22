@@ -19,7 +19,7 @@ load_dotenv()
 
 # Load your API key securely
 
-api_key = os.getenv("OPENAI_API_KEY")
+api_key = os.getenv("GPT_API_KEY")
 openai.api_key = api_key
 
 # Debug: Print the keys in st.secrets
@@ -31,15 +31,23 @@ if "OPENAI_API_KEY" in st.secrets:
 else:
     st.write("OPENAI_API_KEY is not found in secrets")
 
+# Debug: Print the keys in st.secrets
+st.write("Available secret keys:", list(st.secrets.keys()))
+
+# Use the correct key name from your secrets
+api_key = st.secrets.get("GPT_API_KEY", "")
+
+if api_key:
+    st.write("GPT_API_KEY is present in secrets")
+    st.write(f"API key length: {len(api_key)}")
+else:
+    st.error("GPT_API_KEY is not found in secrets or is empty")
+
 def get_suggestions_from_openai(smoker, copd, obesity, depression, max_tokens=200):
     prompt = f"Based on the user's health data, generate health suggestions: smoker: {smoker}, copd: {copd}, obesity: {obesity}, depression: {depression}."
     
-    # Debug: Print API key length (don't print the actual key)
-    api_key = st.secrets.get("OPENAI_API_KEY", "")
-    st.write(f"API key length: {len(api_key)}")
-    
     if not api_key:
-        st.error("OpenAI API key is not set. Please add it to your Streamlit secrets.")
+        st.error("OpenAI API key is not set or empty.")
         return "Unable to generate suggestions due to missing API key."
 
     try:
@@ -56,16 +64,28 @@ def get_suggestions_from_openai(smoker, copd, obesity, depression, max_tokens=20
         )
         
         suggestions = response.choices[0].message.content.strip()
-        
         return suggestions
     
     except OpenAIError as e:
-        st.error(f"Error fetching suggestions: {str(e)}")
-        return "Failed to retrieve suggestions. Please check your API key and try again later."
+        st.error(f"OpenAI API Error: {str(e)}")
+        return f"Failed to retrieve suggestions. Error: {str(e)}"
     
     except Exception as e:
         st.error(f"Unexpected error: {str(e)}")
-        return "An unexpected error occurred. Please try again later."
+        return f"An unexpected error occurred: {str(e)}"
+
+# Rest of your Streamlit app code...
+st.title("Health Suggestion Generator")
+
+# Add input fields for health data
+smoker = st.checkbox("Smoker")
+copd = st.checkbox("COPD")
+obesity = st.checkbox("Obesity")
+depression = st.checkbox("Depression")
+
+if st.button("Get Suggestions"):
+    suggestions = get_suggestions_from_openai(smoker, copd, obesity, depression)
+    st.write(suggestions)
 
 # Set the page layout to wide
 st.set_page_config(layout="centered")
