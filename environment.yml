@@ -18,3 +18,4 @@ dependencies:
   - pip:
     - streamlit
     - streamlit-folium
+    - openai
