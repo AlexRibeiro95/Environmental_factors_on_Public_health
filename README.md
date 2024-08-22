@@ -80,6 +80,7 @@
 
 ### Baseline Results:
 
+![Baseline Barplot](visualizations/Barplot_Models_Performance_Baseline.png)
 ![Baseline Performance](visualizations/baseline_models_performance.png)
 
 ### Hyperparameter Tuning
