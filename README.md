@@ -61,9 +61,14 @@
 
 ## Machine Learning Process Summary
 
-### 
+### Exploratory Data Analysis
 
-### Models Used
+- On this stage of the process, the data was organized at a city level, outliers were detected and solved. A correlation matrix was also done to detect relationships and how strong these were.
+
+![CorrelationMatrix](visualizations/Correlation_matrix_features.png)
+
+### Models Used:
+
 - **Linear Regression**
 - **Decision Tree Regressor**
 - **Random Forest Regressor**
