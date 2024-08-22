@@ -22,26 +22,8 @@ load_dotenv()
 api_key = os.getenv("GPT_API_KEY")
 openai.api_key = api_key
 
-# Debug: Print the keys in st.secrets
-st.write("Available secret keys:", list(st.secrets.keys()))
-
-# Attempt to access the API key (don't print the actual key for security reasons)
-if "OPENAI_API_KEY" in st.secrets:
-    st.write("OPENAI_API_KEY is present in secrets")
-else:
-    st.write("OPENAI_API_KEY is not found in secrets")
-
-# Debug: Print the keys in st.secrets
-st.write("Available secret keys:", list(st.secrets.keys()))
-
 # Use the correct key name from your secrets
 api_key = st.secrets.get("GPT_API_KEY", "")
-
-if api_key:
-    st.write("GPT_API_KEY is present in secrets")
-    st.write(f"API key length: {len(api_key)}")
-else:
-    st.error("GPT_API_KEY is not found in secrets or is empty")
 
 def get_suggestions_from_openai(smoker, copd, obesity, depression, max_tokens=200):
     prompt = f"Based on the user's health data, generate health suggestions: smoker: {smoker}, copd: {copd}, obesity: {obesity}, depression: {depression}."
