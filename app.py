@@ -49,17 +49,22 @@ def get_suggestions_from_openai(smoker, copd, obesity, depression, max_tokens=20
                     {"role": "user", "content": follow_up_prompt}
                 ],
                 temperature=0.7,
-                max_tokens=300  # Smaller token count for the follow-up
+                max_tokens=100  # Smaller token count for the follow-up
             )
             follow_up_suggestions = follow_up_response['choices'][0]['message']['content'].strip()
             suggestions += " " + follow_up_suggestions
         
         return suggestions
     
-    except openai.error.OpenAIError as e:
+    except OpenAIError as e:
         # Handle any errors from the API
         st.error(f"Error fetching suggestions: {e}")
         return "Failed to retrieve suggestions. Please try again later."
+    
+    except Exception as e:
+        # Handle any unexpected errors
+        st.error(f"Unexpected error: {e}")
+        return "An unexpected error occurred. Please try again later."
 
 # Set the page layout to wide
 st.set_page_config(layout="centered")
