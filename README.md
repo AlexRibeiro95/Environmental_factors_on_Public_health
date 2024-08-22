@@ -98,6 +98,7 @@
 - **Overfitting Mitigation**: Checked for overfitting by comparing performance on training and test data.
 
 ### Stacked Model
+
 - **Meta-Model**: A Linear Regression model was used to stack the predictions of the best-performing models (Random Forest, XGBoost, Decision Tree).
 - **Final Model Training**: The final stacked model was trained on the entire dataset.
 
@@ -122,11 +123,9 @@
 - Population Size: population_city also shows significant influence, suggesting that urbanization or population-related factors play a crucial role in the model’s predictions.
 - Obesity Rate: adjusted_obesity_rate and its inverse are also important, reflecting the well-known impact of obesity on health.
 
-## Deployment
+**Environmental Features**:
+-AQI (Air Quality Index): Positioned in the middle of the SHAP summary plot, AQI has a moderate influence on the model’s predictions. This suggests that while air quality is not the most dominant factor, it still significantly contributes to the model’s decision-making process, aligning with real-world evidence that environmental factors affect health outcomes.
 
-### Streamlit Application
-- **Overview**: Developed an interactive web application using Streamlit where users can input their data to predict life expectancy.
-- **User Instructions**: Detailed instructions on how to use the app, interpret the results, and receive health suggestions.
 
 ## Challenges and Future Work
 
