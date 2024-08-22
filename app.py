@@ -22,11 +22,21 @@ load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
 openai.api_key = api_key
 
+# Debug: Print the keys in st.secrets
+st.write("Available secret keys:", list(st.secrets.keys()))
+
+# Attempt to access the API key (don't print the actual key for security reasons)
+if "OPENAI_API_KEY" in st.secrets:
+    st.write("OPENAI_API_KEY is present in secrets")
+else:
+    st.write("OPENAI_API_KEY is not found in secrets")
+
 def get_suggestions_from_openai(smoker, copd, obesity, depression, max_tokens=200):
     prompt = f"Based on the user's health data, generate health suggestions: smoker: {smoker}, copd: {copd}, obesity: {obesity}, depression: {depression}."
     
-    # Get the API key from Streamlit secrets
-    api_key = st.secrets["OPENAI_API_KEY"]
+    # Debug: Print API key length (don't print the actual key)
+    api_key = st.secrets.get("OPENAI_API_KEY", "")
+    st.write(f"API key length: {len(api_key)}")
     
     if not api_key:
         st.error("OpenAI API key is not set. Please add it to your Streamlit secrets.")
