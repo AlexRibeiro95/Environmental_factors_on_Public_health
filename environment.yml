@@ -18,5 +18,5 @@ dependencies:
   - pip:
     - streamlit
     - streamlit-folium
-    - openai==0.28.0
+    - openai
     - python-dotenv
