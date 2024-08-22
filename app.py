@@ -24,34 +24,28 @@ def get_suggestions_from_openai(smoker, copd, obesity, depression, max_tokens=20
     prompt = f"Based on the user's health data, generate health suggestions: smoker: {smoker}, copd: {copd}, obesity: {obesity}, depression: {depression}."
     
     try:
-        # Initial request with a buffer for completing sentences
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
-            messages=[
-                {"role": "system", "content": "You are a helpful assistant that provides health suggestions."},
-                {"role": "user", "content": prompt}
-            ],
+        # Initial request with the updated API method
+        response = openai.Completion.create(
+            engine="text-davinci-003",  # Use "gpt-3.5-turbo" if you have access to ChatGPT models
+            prompt=prompt,
             temperature=0.7,
             max_tokens=max_tokens  # Provide extra tokens as a buffer
         )
         
         # Parse the response
-        suggestions = response['choices'][0]['message']['content'].strip()
+        suggestions = response.choices[0].text.strip()
         
         # Check if the suggestions end with a complete sentence
         if not suggestions.endswith('.'):
             # Follow-up request to complete the sentence
             follow_up_prompt = "Please complete the previous suggestions."
-            follow_up_response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
-                messages=[
-                    {"role": "system", "content": "You are a helpful assistant."},
-                    {"role": "user", "content": follow_up_prompt}
-                ],
+            follow_up_response = openai.Completion.create(
+                engine="text-davinci-003",
+                prompt=follow_up_prompt,
                 temperature=0.7,
                 max_tokens=100  # Smaller token count for the follow-up
             )
-            follow_up_suggestions = follow_up_response['choices'][0]['message']['content'].strip()
+            follow_up_suggestions = follow_up_response.choices[0].text.strip()
             suggestions += " " + follow_up_suggestions
         
         return suggestions
