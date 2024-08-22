@@ -5,7 +5,7 @@
 1. [Introduction](#introduction)
 2. [Objective](#objective)
 3. [Data Collection](#data-collection)
-4. [Data Preprocessing](#data-preprocessing)  
+4. [ML-Pipeline](#Machine-Learning-Pipeline)  
 5. [Machine Learning Process Summary](#Machine-Learning-Process-Summary)  
 6. [Model Performance](#model-performance)    
 7. [Feature Importance](#feature-importance)
@@ -41,7 +41,10 @@
   3. **Health Metrics**: Retrieved from the CDC’s database, aggregated at the state level.
   4. **Air Quality Index (AQI)**: Collected via OpenWeather API for each city.
 
-## Data Preprocessing
+## Machine Learning Pipeline
+
+![Pipeline](visualizations/ML_pipeline.png)
+*This diagram describes the entire Machine Learning process.*
 
 ### Data Cleaning
 - **Handling Missing Values**: Imputed missing values where necessary.
@@ -57,6 +60,8 @@
 - **Correlation Matrix**: Analyzed correlations between different features to understand relationships and dependencies.
 
 ## Machine Learning Process Summary
+
+### 
 
 ### Models Used
 - **Linear Regression**
