@@ -19,3 +19,4 @@ dependencies:
     - streamlit
     - streamlit-folium
     - openai
+    - python-dotenv
