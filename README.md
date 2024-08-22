@@ -3,16 +3,13 @@
 ## Index 
 
 1. [Introduction](#introduction)
-2. [Objective](#objective)
-3. [Data Collection](#data-collection)
-4. [ML-Pipeline](#Machine-Learning-Pipeline)  
-5. [Machine Learning Process Summary](#Machine-Learning-Process-Summary)  
-6. [Model Performance](#model-performance)    
-7. [Feature Importance](#feature-importance)
-8. [Deployment](#deployment)  
-9. [Challenges and Future Work](#challenges-and-future-work) 
-10. [Conclusion](#conclusion)
-11. [Credits and Management/Presentation Links](#Credits-and-Management/Presentation-Links)
+2. [Data Collection](#data-collection)
+3. [ML-Pipeline](#Machine-Learning-Pipeline)  
+4. [Machine Learning Process Summary](#Machine-Learning-Process-Summary)  
+5. [Model Performance](#model-performance)    
+6. [Feature Importance](#feature-importance)  
+7. [Conclusion](#conclusion)
+8. [Credits and Management/Presentation Links](#Credits-and-Management/Presentation-Links)
 
 ---
 
@@ -104,12 +101,10 @@
 
 ## Model Performance
 
-### Performance Metrics
-- **Evaluation Metrics**: The models were evaluated using Mean Absolute Error (MAE), Mean Squared Error (MSE), and R² score.
-- **Comparison of Models**: Detailed comparison of model performance metrics.
-
 ### Final Stacked Model Results
 - **Training vs. Test Performance**: Comparison of performance metrics for the final stacked model on both training and test data.
+
+![Grouped Final Plot](visualizations/Grouplot_final_staked_model.png)
 
 ## Feature Importance
 
@@ -124,18 +119,7 @@
 - Obesity Rate: adjusted_obesity_rate and its inverse are also important, reflecting the well-known impact of obesity on health.
 
 **Environmental Features**:
--AQI (Air Quality Index): Positioned in the middle of the SHAP summary plot, AQI has a moderate influence on the model’s predictions. This suggests that while air quality is not the most dominant factor, it still significantly contributes to the model’s decision-making process, aligning with real-world evidence that environmental factors affect health outcomes.
-
-
-## Challenges and Future Work
-
-### Challenges Faced
-- **Data Limitations**: Discussed challenges such as missing data, computational constraints, and model complexity.
-- **Overfitting**: Addressed the challenge of overfitting in model training.
-
-### Future Enhancements
-- **Improving Model Accuracy**: Suggestions for incorporating additional data sources and refining the model.
-- **Wider Deployment**: Plans to deploy the model in different environments for broader use.
+- AQI (Air Quality Index): Positioned in the middle of the SHAP summary plot, AQI has a moderate influence on the model’s predictions. This suggests that while air quality is not the most dominant factor, it still significantly contributes to the model’s decision-making process, aligning with real-world evidence that environmental factors affect health outcomes.
 
 ## Conclusion
 
