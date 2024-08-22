@@ -21,7 +21,7 @@ with open(os.path.join(BASE_DIR, 'stacked_model.pkl'), 'rb') as f:
     meta_model = model_data['meta_model']
 
 # Load the original dataset
-original_data = pd.read_csv('/Users/alexandreribeiro/Documents/GitHub/final_project/data/clean/data_with_cities.csv')
+original_data = pd.read_csv('https://raw.githubusercontent.com/AlexRibeiro95/Environmental_factors_on_Public_health/main/data/clean/data_with_cities.csv')
 
 def get_city_features(city_name):
     """
