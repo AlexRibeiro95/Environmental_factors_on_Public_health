@@ -15,17 +15,33 @@ from openai import OpenAI
 
 # Load your API key securely
 
+load_dotenv()
+
+# Load your API key securely
+
 api_key = os.getenv("GPT_API_KEY")
 openai.api_key = api_key
 
 
+import os
+from openai import OpenAI
+from openai.types.chat.chat_completion import ChatCompletion
+from openai import OpenAIError
+import streamlit as st
+
 def get_suggestions_from_openai(smoker, copd, obesity, depression, max_tokens=200):
     prompt = f"Based on the user's health data, generate health suggestions: smoker: {smoker}, copd: {copd}, obesity: {obesity}, depression: {depression}."
     
-    # Initialize the OpenAI client
-    client = OpenAI()  # Make sure your API key is set in the OPENAI_API_KEY environment variable
-    
+    # Check if the API key is set
+    api_key = os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        st.error("OpenAI API key is not set. Please set the OPENAI_API_KEY environment variable.")
+        return "Unable to generate suggestions due to missing API key."
+
     try:
+        # Initialize the OpenAI client with the API key
+        client = OpenAI(api_key=api_key)
+        
         # Use the chat.completions.create method for chat-based models like gpt-3.5-turbo
         response: ChatCompletion = client.chat.completions.create(
             model="gpt-3.5-turbo",
@@ -44,13 +60,28 @@ def get_suggestions_from_openai(smoker, copd, obesity, depression, max_tokens=20
     
     except OpenAIError as e:
         # Handle any errors from the API
-        st.error(f"Error fetching suggestions: {e}")
-        return "Failed to retrieve suggestions. Please try again later."
+        error_message = str(e)
+        st.error(f"Error fetching suggestions: {error_message}")
+        return "Failed to retrieve suggestions. Please check your API key and try again later."
     
     except Exception as e:
         # Handle any unexpected errors
-        st.error(f"Unexpected error: {e}")
+        st.error(f"Unexpected error: {str(e)}")
         return "An unexpected error occurred. Please try again later."
+
+# Usage in your Streamlit app
+if __name__ == "__main__":
+    st.title("Health Suggestion Generator")
+    
+    # Add input fields for health data
+    smoker = st.checkbox("Smoker")
+    copd = st.checkbox("COPD")
+    obesity = st.checkbox("Obesity")
+    depression = st.checkbox("Depression")
+    
+    if st.button("Get Suggestions"):
+        suggestions = get_suggestions_from_openai(smoker, copd, obesity, depression)
+        st.write(suggestions)
 
 # Set the page layout to wide
 st.set_page_config(layout="centered")
