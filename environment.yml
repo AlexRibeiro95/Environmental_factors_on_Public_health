@@ -13,6 +13,8 @@ dependencies:
   - plotly
   - folium
   - bottleneck
+  - xgboost
+  - pip
   - pip:
     - streamlit
     - streamlit-folium
