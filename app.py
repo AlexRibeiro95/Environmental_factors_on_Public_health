@@ -88,35 +88,122 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+# Custom CSS to adjust the sidebar content
+st.markdown(
+    """
+    <style>
+    /* Adjust the position and styling of the sidebar radio buttons */
+    .stRadio > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .stRadio > div > label {
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+    .stRadio > div > div {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+
 # Display the logo in the sidebar
 st.sidebar.image("/Users/alexandreribeiro/Documents/GitHub/final_project/visualizations/logo.png", use_column_width=True)
 
+# Add a centered and italic legend or caption below the logo
+st.sidebar.markdown("""
+<div style="text-align: center;">
+    <em>We cannot control the future,</em><br>
+    <em>but we can control the actions</em><br>
+    <em>that will dictate the future.</em>
+</div>
+""", unsafe_allow_html=True)
+
 # Continue with the rest of your sidebar content
-st.sidebar.title("Navigation")
-page = st.sidebar.radio("Go to", ["Project Overview", "Findings","Machine Learning", "Calculator"])
+st.sidebar.markdown("""
+<div style="text-align: center; margin-bottom: -50px;">
+    <h3>Navigation</h3>
+</div>
+""", unsafe_allow_html=True)
+
+page = st.sidebar.radio("", ["Project Overview", "Findings","Machine Learning", "Calculator"])
 
 # Page 1: Project Overview
 if page == "Project Overview":
     st.title("Project Overview")
     st.write("""
-    Welcome to the Life Expectancy Prediction Project. This tool aims to predict life expectancy based on various health metrics such as smoking status, obesity, and more. 
-    Below you'll find different sections that explain how the project works, the data collected, and the machine learning models used.
+    ### Why This Project?
+
+    In recent years, the intersection of urban planning and public health has garnered significant attention. Green spaces, such as parks, gardens, and natural landscapes, are increasingly recognized for their potential to improve physical and mental well-being. However, despite widespread belief in their benefits, the direct impact of green spaces on public health remains underexplored, particularly when it comes to measurable health outcomes.
+
+    This project was conceived to investigate the relationship between green spaces and public health metrics. Initially, we aimed to prove a direct correlation between the availability of green spaces in urban areas and improved health outcomes. However, as the project progressed, it became clear that other environmental factors, particularly the Air Quality Index (AQI), played a significant role in this complex relationship.
+
+    ### How AQI Came into Focus
+
+    As we delved deeper into the data, it became evident that air quality might mediate the relationship between green spaces and health. Poor air quality is a well-documented risk factor for a variety of health issues, and it can diminish the potential benefits of green spaces. Therefore, AQI became a critical variable in our analysis, allowing us to explore not only the direct impact of green spaces but also how air quality might influence this relationship.
     """)
 
 # Page 2: Findings
 elif page == "Findings":
     st.title("Findings")
     st.write("""
-    The data used in this project is sourced from various public health databases and city-specific information. 
-    The dataset includes information on air quality, green space area, population size, and health metrics such as obesity and smoking rates.
+    ### Key Findings
+
+    Throughout our analysis, we faced the challenge of not being able to definitively prove that green spaces have a direct impact on public health. This was a surprising result, given the common assumption that more green space equates to better health. However, this finding doesn't diminish the importance of green spaces; rather, it highlights the complexity of their impact on health.
+
+    **Why Couldn’t We Prove the Direct Impact?**
+
+    The lack of a clear, direct relationship could be due to several factors:
+    - **Data Limitations**: The available data may not have captured all relevant aspects of how green spaces are used or their quality.
+    - **Confounding Variables**: Other factors, such as socioeconomic status, urban density, and particularly air quality, may have stronger or more direct impacts on health outcomes.
+    - **Complex Interactions**: The benefits of green spaces might be mediated or moderated by other factors, making the relationship difficult to isolate.
+
+    ### Proven Benefits of Green Spaces
+
+    Despite the challenges in proving a direct impact, extensive research supports the numerous benefits of green spaces in urban areas, including:
+    - **Physical Health**: Regular access to green spaces encourages physical activity, which is linked to reduced risks of obesity, cardiovascular diseases, and other chronic conditions.
+    - **Mental Health**: Green spaces have been shown to reduce stress, anxiety, and depression, providing a natural environment for relaxation and mental rejuvenation.
+    - **Social Benefits**: Green spaces offer a communal area for social interaction, fostering community ties and improving overall quality of life.
+
+    These findings suggest that while the direct impact on specific health metrics may be complex and influenced by multiple factors, the overall contribution of green spaces to public well-being is significant and cannot be overlooked.
     """)
 
 # Page 3: Machine Learning
 elif page == "Machine Learning":
     st.title("Machine Learning")
+    st.image("visualizations/ML_pipeline.png", caption="The Journey of Model Building", use_column_width=True)
     st.write("""
-    The life expectancy prediction is based on a stacked machine learning model combining Random Forest, XGBoost, and Support Vector Regressor. 
-    Each model is trained on the features from the dataset, and the final prediction is made using a meta-model.
+    ### Our Approach
+
+    To explore the relationship between green spaces, AQI, and public health, we employed a structured machine learning approach. This section provides an overview of the key steps we took:
+
+    1. **Data Collection and Preprocessing**:
+    - We gathered data from multiple sources, including public health records, environmental datasets, and urban planning databases.
+    - Data preprocessing involved cleaning the data, handling missing values, and engineering features that might capture the complex interactions between green spaces and health outcomes.
+
+    2. **Model Selection and Training**:
+    - We explored several machine learning models, including Linear Regression, Decision Trees, Random Forests, and XGBoost, to identify the best approach for our data.
+    - The models were trained using a combination of historical data and relevant environmental variables.
+
+    3. **Hyperparameter Tuning and Regularization**:
+    - To optimize the performance of our models, we conducted extensive hyperparameter tuning. This process involved adjusting model parameters to minimize errors and improve predictive accuracy.
+    - Regularization techniques were applied to prevent overfitting, ensuring that our models could generalize well to unseen data.
+
+    4. **Evaluation and Interpretation**:
+    - The models were evaluated using key metrics such as R² Score, Mean Absolute Error (MAE), and Mean Squared Error (MSE).
+    - Visualization of feature importance and error analysis helped us interpret the results and refine our understanding of the underlying relationships.
+
+    ### Results
+
+    The final stacked model, which combined the strengths of multiple models, demonstrated strong predictive capabilities, as shown in the graphs below:
     """)
 
 # Page 4: Calculator

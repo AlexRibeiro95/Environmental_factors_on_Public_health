@@ -162,6 +162,7 @@ soupsieve @ file:///home/conda/feedstock_root/build_artifacts/soupsieve_16939292
 stack-data @ file:///home/conda/feedstock_root/build_artifacts/stack_data_1669632077133/work
 statsmodels @ file:///Users/runner/miniforge3/conda-bld/statsmodels_1715941272213/work
 streamlit @ file:///home/conda/feedstock_root/build_artifacts/streamlit_1721946308248/work
+streamlit_folium==0.22.0
 tabulate==0.9.0
 tenacity==8.5.0
 terminado @ file:///Users/runner/miniforge3/conda-bld/terminado_1710263781917/work
