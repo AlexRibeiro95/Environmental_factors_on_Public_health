@@ -48,14 +48,24 @@ def get_suggestions_from_openai(smoker, copd, obesity, depression, max_tokens=20
         
         suggestions = response.choices[0].message.content.strip()
         
-        # Ensure the response ends with a complete sentence
-        sentences = re.split(r'(?<=[.!?])\s+', suggestions)
-        if len(sentences) > 1:
-            complete_suggestions = ' '.join(sentences[:-1])
-        else:
-            complete_suggestions = suggestions
+        # Split the suggestions into lines
+        lines = suggestions.split('\n')
+        
+        # Format numbered suggestions
+        formatted_suggestions = []
+        for line in lines:
+            if re.match(r'^\d+\.', line):  # If line starts with a number and period
+                formatted_suggestions.append(line)
+            elif formatted_suggestions:  # If it's not a numbered line but we have previous suggestions
+                formatted_suggestions[-1] += ' ' + line.strip()
+            else:  # If it's the opening statement
+                formatted_suggestions.append(line)
+        
+        # Join the formatted suggestions
+        complete_suggestions = '\n'.join(formatted_suggestions)
         
         return complete_suggestions
+        
     
     except OpenAIError as e:
         st.error(f"OpenAI API Error: {str(e)}")
