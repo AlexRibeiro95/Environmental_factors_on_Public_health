@@ -4,6 +4,9 @@ import requests
 import os
 import openai
 from dotenv import load_dotenv
+import seaborn as sns
+import folium
+from streamlit_folium import folium_static
 
 # Load environment variables from .env file
 
@@ -134,7 +137,7 @@ st.sidebar.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-page = st.sidebar.radio("", ["Project Overview", "Findings","Machine Learning", "Calculator"])
+page = st.sidebar.radio("", ["Project Overview", "Data Exploring","Findings","Machine Learning", "Calculator"])
 
 # Page 1: Project Overview
 if page == "Project Overview":
@@ -151,9 +154,83 @@ if page == "Project Overview":
     As we delved deeper into the data, it became evident that air quality might mediate the relationship between green spaces and health. Poor air quality is a well-documented risk factor for a variety of health issues, and it can diminish the potential benefits of green spaces. Therefore, AQI became a critical variable in our analysis, allowing us to explore not only the direct impact of green spaces but also how air quality might influence this relationship.
     """)
 
-# Page 2: Findings
+# Page 2: Data Exploring
+if page == "Data Exploration":
+    st.title("Data Exploration")
+
+    # Introduction to the page
+    st.write("""
+    ### Explore Public Health Metrics Across Cities
+
+    This section allows you to explore various public health metrics collected from different cities. 
+    You can select specific metrics, compare them across different cities, and even visualize the data on an interactive map.
+
+    Use the options below to start exploring the data. You can select a metric to visualize across all cities, compare specific cities, or see how these metrics are distributed geographically.
+    """)
+
+
+    # Load the dataset
+    df = pd.read_csv('https://raw.githubusercontent.com/AlexRibeiro95/Environmental_factors_on_Public_health/main/data/clean/final_dataset.csv')
+
+    # List of health metrics available in the dataset
+    metrics = [
+        'obesity_rate', 'smoking_rate', 'exercising_rate', 'adjusted_obesity_rate',
+        'adjusted_smoking_rate', 'adjusted_exercising_rate', 'adjusted_chronic_rate',
+        'adjusted_life_expectancy', 'adjusted_copd_rate', 'adjusted_depression_rate',
+        'life_expectancy', 'AQI'
+    ]
+
+    # User selects a metric to explore
+    selected_metric = st.selectbox("Select a health metric to visualize:", metrics)
+
+    # Plot the selected metric for all cities
+    plt.figure(figsize=(10, 6))
+    sns.barplot(x='city', y=selected_metric, data=df)
+    plt.xticks(rotation=90)
+    plt.title(f"Comparison of {selected_metric} Across Cities")
+    plt.ylabel(selected_metric.replace('_', ' ').title())
+    plt.xlabel("City")
+    st.pyplot(plt)
+
+    # Show the metric on a map
+    map_center = [df['lat'].mean(), df['lng'].mean()]
+    m = folium.Map(location=map_center, zoom_start=5)
+
+    for _, row in df.iterrows():
+        folium.CircleMarker(
+            location=[row['lat'], row['lng']],
+            radius=row[selected_metric] / 10,
+            color='blue',
+            fill=True,
+            fill_color='blue',
+            fill_opacity=0.6,
+            popup=f"{row['city']}: {row[selected_metric]}"
+        ).add_to(m)
+
+    folium_static(m)
+
+    # Multi-select for cities to compare
+    selected_cities = st.multiselect("Select cities to compare:", df['city'].unique())
+
+    if selected_cities:
+        # Filter data for the selected cities
+        filtered_data = df[df['city'].isin(selected_cities)]
+        
+        # Display the comparison
+        st.write(filtered_data[['city'] + metrics])
+        
+        # Plot the selected metric for these cities
+        plt.figure(figsize=(10, 6))
+        sns.barplot(x='city', y=selected_metric, data=filtered_data)
+        plt.title(f"Comparison of {selected_metric} for Selected Cities")
+        plt.ylabel(selected_metric.replace('_', ' ').title())
+        plt.xlabel("City")
+        st.pyplot(plt)
+
+# Page 3: Findings
 elif page == "Findings":
     st.title("Findings")
+    st.image("visualizations/greenspaces_benefits.png", caption="Green Spaces Benefits", use_column_width=True)
     st.write("""
     ### Key Findings
 
@@ -176,7 +253,7 @@ elif page == "Findings":
     These findings suggest that while the direct impact on specific health metrics may be complex and influenced by multiple factors, the overall contribution of green spaces to public well-being is significant and cannot be overlooked.
     """)
 
-# Page 3: Machine Learning
+# Page 4: Machine Learning
 elif page == "Machine Learning":
     st.title("Machine Learning")
     st.image("visualizations/ML_pipeline.png", caption="The Journey of Model Building", use_column_width=True)
@@ -206,7 +283,7 @@ elif page == "Machine Learning":
     The final stacked model, which combined the strengths of multiple models, demonstrated strong predictive capabilities, as shown in the graphs below:
     """)
 
-# Page 4: Calculator
+# Page 5: Calculator
 elif page == "Calculator":
     st.title("Life Expectancy Calculator")
 
