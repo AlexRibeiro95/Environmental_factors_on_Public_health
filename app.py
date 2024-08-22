@@ -12,6 +12,7 @@ import plotly.express as px
 from openai import OpenAIError
 from openai.types.chat.chat_completion import ChatCompletion
 from openai import OpenAI
+import re
 
 # Load your API key securely
 
