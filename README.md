@@ -22,23 +22,24 @@
 
 - This project aims to predict life expectancy based on various health metrics such as smoking status, obesity, air quality, and more. The model leverages advanced machine learning techniques to provide insights that can be used to improve public health strategies.
 
-## Objective
+**Objective:**
 
-The primary objective of this project is to develop a robust machine learning model that accurately predicts life expectancy using a combination of health, environmental, and demographic data.
+- The primary objective of this project was to correlate the environmental factors to the public health metrics, and develop a robust machine learning model that could accurately predict life expectancy based on th
 
 ## Data Collection
 
 ### Source of Data
-- **SimpleMaps**: Provided city data including coordinates and population ([SimpleMaps](https://simplemaps.com/data/world-cities)).
-- **Google Earth Engine (GEE)**: Used to obtain green space areas within city limits.
-- **Centers for Disease Control and Prevention (CDC)**: Collected health-related data such as obesity rates, smoking rates, exercise rates, and more.
-- **OpenWeather API**: Used to collect the Air Quality Index (AQI).
+- **SimpleMaps**: Provided city data including coordinates and population. [SimpleMaps](https://simplemaps.com/data/world-cities)
+- **Google Earth Engine (GEE)**: Used to obtain green space areas within city limits. [GEE](https://earthengine.google.com/)
+- **Centers for Disease Control and Prevention (CDC)**: Collected health-related data such as obesity rates, smoking rates, exercise rates, and more.[CDC](https://cdi.cdc.gov/)
+- **OpenWeather API**: Used to collect the Air Quality Index (AQI). [OpenWeatherAPI](https://openweathermap.org/api)
 
-### Data Acquisition Process
-- **City Data**: Retrieved from SimpleMaps, focusing on cities in the US.
-- **Green Spaces**: Data obtained via Google Earth Engine using city coordinates.
-- **Health Metrics**: Retrieved from the CDC’s database, aggregated at the state level.
-- **Air Quality Index (AQI)**: Collected via OpenWeather API for each city.
+### Data Acquisition Process:
+
+  1. **City Data**: Retrieved from SimpleMaps, focusing on cities in the US.
+  2. **Green Spaces**: Data obtained via Google Earth Engine using city coordinates.
+  3. **Health Metrics**: Retrieved from the CDC’s database, aggregated at the state level.
+  4. **Air Quality Index (AQI)**: Collected via OpenWeather API for each city.
 
 ## Data Preprocessing
 
