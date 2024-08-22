@@ -1,12 +1,20 @@
 import pickle
 import numpy as np
 import pandas as pd
+import os
+import xgboost as xgb
+from sklearn.linear_model import LinearRegression
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.ensemble import RandomForestRegressor
+
+# Get the directory of the current script
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Load the scaler and the stacked model
-with open('scaler.pkl', 'rb') as f:
+with open(os.path.join(BASE_DIR, 'scaler.pkl'), 'rb') as f:
     scaler = pickle.load(f)
 
-with open('stacked_model.pkl', 'rb') as f:
+with open(os.path.join(BASE_DIR, 'stacked_model.pkl'), 'rb') as f:
     model_data = pickle.load(f)
     base_models = model_data['base_models']
     meta_model = model_data['meta_model']
