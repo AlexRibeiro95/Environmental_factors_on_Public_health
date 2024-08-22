@@ -12,7 +12,7 @@
 8. [Deployment](#deployment)  
 9. [Challenges and Future Work](#challenges-and-future-work) 
 10. [Conclusion](#conclusion)
-11. [References](#references)
+11. [Credits and Management/Presentation Links](#Credits-and-Management/Presentation-Links)
 
 ---
 
@@ -67,6 +67,8 @@
 
 ![CorrelationMatrix](visualizations/Correlation_matrix_features.png)
 
+- After analyzing the variables relations we decided to drop highly correlated variables like **chronic diseases** and **exercise rate** to avoid multicollinearity.
+
 ### Models Used:
 
 - **Linear Regression**
@@ -75,6 +77,10 @@
 - **Gradient Boosting Regressor**
 - **Support Vector Regressor (SVR)**
 - **XGBoost Regressor**
+
+### Baseline Results:
+
+![Baseline Performance](visualizations/baseline_models_performance.png)
 
 ### Hyperparameter Tuning
 - **GridSearchCV**: Used to find the best hyperparameters for Random Forest, XGBoost, and Decision Tree models.
@@ -126,12 +132,9 @@ Summarized the key findings and achievements of the project.
 ### Impact
 Reflected on the potential impact of the project on public health awareness and policy-making.
 
-## References
-- **SimpleMaps**: https://simplemaps.com/data/world-cities
-- **Google Earth Engine**: https://earthengine.google.com/
-- **CDC Data**: https://cdi.cdc.gov/
-- **OpenWeather API**: https://openweathermap.org/api
 
+## Credits and Management/Presentation Links
 
-### Additional Visualizations
-Provided extra visualizations that support the findings in the main body.
+**Author:** [Alexandre Ribeiro](https://www.linkedin.com/in/alexandre-ribeiro-264445279/)
+**Notion:** [Management - Notion](https://alpine-bathtub-2e4.notion.site/Environmental-factors-on-Public-Health-deea5e9c20714696972fc24a07de5fcc)
+**Streamlit:** [Streamlit]()
