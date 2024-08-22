@@ -10,22 +10,24 @@ from streamlit_folium import folium_static
 import pandas as pd
 import plotly.express as px
 from openai import OpenAIError
-from openai import ChatCompletion
+from openai.types.chat.chat_completion import ChatCompletion
+from openai import OpenAI
 
 # Load your API key securely
 
 api_key = os.getenv("GPT_API_KEY")
 openai.api_key = api_key
 
-import openai
-from openai import OpenAIError
 
 def get_suggestions_from_openai(smoker, copd, obesity, depression, max_tokens=200):
     prompt = f"Based on the user's health data, generate health suggestions: smoker: {smoker}, copd: {copd}, obesity: {obesity}, depression: {depression}."
     
+    # Initialize the OpenAI client
+    client = OpenAI()  # Make sure your API key is set in the OPENAI_API_KEY environment variable
+    
     try:
-        # Use the ChatCompletion endpoint for chat-based models like gpt-3.5-turbo
-        response = openai.ChatCompletion.create(
+        # Use the chat.completions.create method for chat-based models like gpt-3.5-turbo
+        response: ChatCompletion = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant that provides health suggestions."},
@@ -36,7 +38,7 @@ def get_suggestions_from_openai(smoker, copd, obesity, depression, max_tokens=20
         )
         
         # Parse the response
-        suggestions = response['choices'][0]['message']['content'].strip()
+        suggestions = response.choices[0].message.content.strip()
         
         return suggestions
     
