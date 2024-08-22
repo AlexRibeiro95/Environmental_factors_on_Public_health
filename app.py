@@ -143,17 +143,41 @@ page = st.sidebar.radio("", ["Project Overview", "Data Exploration", "Findings",
 
 # Page 1: Project Overview
 if page == "Project Overview":
+    st.image("visualizations/head_image.webp", use_column_width=True)
     st.title("Project Overview")
+
     st.write("""
-    ### Why This Project?
+    ### How do we got here?
 
-    In recent years, the intersection of urban planning and public health has garnered significant attention. Green spaces, such as parks, gardens, and natural landscapes, are increasingly recognized for their potential to improve physical and mental well-being. However, despite widespread belief in their benefits, the direct impact of green spaces on public health remains underexplored, particularly when it comes to measurable health outcomes.
+    In recent years, we have witnessed an alarming rise in various health conditions worldwide. Obesity, depression, respiratory illnesses, and chronic diseases are increasingly prevalent, affecting millions of lives and straining healthcare systems globally. These issues are further exacerbated by environmental challenges, such as air pollution and climate change, which are becoming more severe each year.
 
-    This project was conceived to investigate the relationship between green spaces and public health metrics. Initially, we aimed to prove a direct correlation between the availability of green spaces in urban areas and improved health outcomes. However, as the project progressed, it became clear that other environmental factors, particularly the Air Quality Index (AQI), played a significant role in this complex relationship.
+    As we grapple with these mounting health crises, urban green spaces—parks, forests, and gardens—emerge as a vital, yet often overlooked, solution. Green spaces have been shown to provide numerous health benefits, from improving mental well-being to reducing the risk of chronic diseases. They also play a crucial role in mitigating the effects of climate change, enhancing air quality, and fostering biodiversity within urban areas.
+    """)
 
-    ### How AQI Came into Focus
+    st.write("""
+    ### The Potential of Green Spaces
 
-    As we delved deeper into the data, it became evident that air quality might mediate the relationship between green spaces and health. Poor air quality is a well-documented risk factor for a variety of health issues, and it can diminish the potential benefits of green spaces. Therefore, AQI became a critical variable in our analysis, allowing us to explore not only the direct impact of green spaces but also how air quality might influence this relationship.
+    The benefits of green spaces extend beyond individual health. By increasing the presence of greenery in our cities, we can contribute to the fight against climate change, reduce urban heat islands, and support a diverse range of plant and animal species. Green spaces also encourage physical activity, provide opportunities for social interaction, and improve overall quality of life in urban environments.
+
+    Recognizing these multifaceted benefits, we embarked on this project to explore the potential impact of green spaces on public health. Our goal was to quantify the relationship between green spaces and various health metrics, such as life expectancy, obesity rates, and respiratory conditions, across different cities.
+    """)
+
+    st.write("""
+    ### Our Journey: Developing the Project
+
+    With these objectives in mind, we began by gathering extensive data from various public health and environmental sources. This data included metrics on air quality, green space coverage, population demographics, and health conditions across multiple cities.
+
+    We knew that a robust data analysis framework was necessary to uncover meaningful insights from this wealth of information. To this end, we employed advanced machine learning techniques to analyze the data, identify patterns, and predict health outcomes based on the presence and quality of green spaces.
+
+    Through this project, we aimed to provide actionable insights for urban planners, policymakers, and public health officials. By highlighting the critical role of green spaces in improving public health and combating environmental challenges, we hope to inspire more informed decisions that will lead to healthier, more sustainable cities.
+    """)
+
+    st.write("""
+    ### What Lies Ahead
+
+    In the following sections, we will delve into the findings from our analysis, discussing the impact of green spaces on public health and the environment. We will also walk you through the machine learning process we used to generate our predictions and provide a detailed look at the results of our models.
+
+    Join us as we explore the data, uncover the connections between green spaces and health outcomes, and envision a future where our cities are healthier, greener, and more resilient.
     """)
 
 # Page 2: Data Exploration
@@ -229,27 +253,50 @@ if page == "Data Exploration":
 # Page 3: Findings
 elif page == "Findings":
     st.title("Findings")
-    st.image("visualizations/greenspaces_benefits.png", caption="Green Spaces Benefits", use_column_width=True)
+
     st.write("""
-    ### Key Findings
+    ### The Multiple Benefits of Green Spaces
 
-    Throughout our analysis, we faced the challenge of not being able to definitively prove that green spaces have a direct impact on public health. This was a surprising result, given the common assumption that more green space equates to better health. However, this finding doesn't diminish the importance of green spaces; rather, it highlights the complexity of their impact on health.
+    Urban green spaces, such as parks and tree-lined streets, are widely recognized for their numerous benefits to both the environment and public health. As illustrated below, research has shown that the presence of urban trees and greenery can lead to:
 
-    **Why Couldn’t We Prove the Direct Impact?**
+    - **Reducing Rates of Cardiac Disease, Strokes, and Asthma**: Improved air quality can decrease the prevalence of respiratory and cardiovascular conditions.
+    - **Protecting Biodiversity**: Urban green spaces provide essential habitats for birds, pollinators, and other wildlife.
+    - **Reducing Obesity Levels**: Access to green spaces encourages physical activity, including walking and cycling.
+    - **Managing Stormwater**: Green spaces help to control runoff, reduce flooding, and keep pollutants out of waterways.
+    - **Cooling Urban Areas**: Trees can lower city temperatures, reducing heat-related illnesses and deaths.
+    - **Filtering Air Pollutants**: Vegetation can trap fine particles, improving air quality within urban environments.
+    - **Increasing Property Values**: Neighborhoods with abundant green spaces tend to have higher property values.
+    - **Reducing Stress and Enhancing Mental Health**: Green spaces provide a natural environment that can alleviate stress, anxiety, and depression.
+    """)
 
-    The lack of a clear, direct relationship could be due to several factors:
-    - **Data Limitations**: The available data may not have captured all relevant aspects of how green spaces are used or their quality.
-    - **Confounding Variables**: Other factors, such as socioeconomic status, urban density, and particularly air quality, may have stronger or more direct impacts on health outcomes.
-    - **Complex Interactions**: The benefits of green spaces might be mediated or moderated by other factors, making the relationship difficult to isolate.
+    st.image("visualizations/greenspaces_benefits.png", caption="Green Spaces Benefits", use_column_width=True)
 
-    ### Proven Benefits of Green Spaces
+    st.write("""
+    ### Our Key Findings
 
-    Despite the challenges in proving a direct impact, extensive research supports the numerous benefits of green spaces in urban areas, including:
-    - **Physical Health**: Regular access to green spaces encourages physical activity, which is linked to reduced risks of obesity, cardiovascular diseases, and other chronic conditions.
-    - **Mental Health**: Green spaces have been shown to reduce stress, anxiety, and depression, providing a natural environment for relaxation and mental rejuvenation.
-    - **Social Benefits**: Green spaces offer a communal area for social interaction, fostering community ties and improving overall quality of life.
+    While our project aimed to uncover the impact of green spaces on life expectancy, the results were more nuanced than anticipated. Although we couldn't establish a direct correlation between green space coverage and life expectancy, our analysis provided valuable insights into the complex interplay between environmental factors and health outcomes.
+    """)
 
-    These findings suggest that while the direct impact on specific health metrics may be complex and influenced by multiple factors, the overall contribution of green spaces to public well-being is significant and cannot be overlooked.
+    st.write("""
+    #### 1. Air Quality Index (AQI) and Life Expectancy
+
+    One of the most significant findings from our study was the strong relationship between the Air Quality Index (AQI) and life expectancy. Cities with higher AQI, indicating poorer air quality, were consistently associated with lower life expectancies. This finding underscores the importance of air quality in urban planning and public health initiatives.
+    """)
+
+    st.write("""
+    #### 2. Health Conditions and Life Expectancy
+
+    In addition to AQI, our analysis identified several health conditions that showed a strong correlation with life expectancy. Specifically, obesity rates, smoking rates, and the prevalence of chronic diseases were key factors influencing life expectancy across different cities.
+
+    - **Obesity Rates**: Higher obesity rates were linked to lower life expectancy, reflecting the well-known health risks associated with obesity.
+    - **Smoking Rates**: Smoking remains one of the most significant predictors of reduced life expectancy, highlighting the need for ongoing public health campaigns to reduce smoking prevalence.
+    - **Chronic Diseases**: The prevalence of chronic diseases such as COPD and depression also showed a notable impact on life expectancy, emphasizing the need for comprehensive healthcare strategies to manage these conditions.
+    """)
+
+    st.write("""
+    ### Conclusion
+
+    While the direct impact of green spaces on life expectancy remains elusive, our findings highlight the importance of improving air quality and addressing key health conditions to enhance public health outcomes. The insights gained from this analysis can inform future research and urban planning efforts, helping to create healthier, more sustainable cities.
     """)
 
 # Page 4: Machine Learning
@@ -257,30 +304,82 @@ elif page == "Machine Learning":
     st.title("Machine Learning")
     st.image("visualizations/ML_pipeline.png", caption="The Journey of Model Building", use_column_width=True)
     st.write("""
-    ### Our Approach
+    ### Introduction
 
-    To explore the relationship between green spaces, AQI, and public health, we employed a structured machine learning approach. This section provides an overview of the key steps we took:
-
-    1. **Data Collection and Preprocessing**:
-    - We gathered data from multiple sources, including public health records, environmental datasets, and urban planning databases.
-    - Data preprocessing involved cleaning the data, handling missing values, and engineering features that might capture the complex interactions between green spaces and health outcomes.
-
-    2. **Model Selection and Training**:
-    - We explored several machine learning models, including Linear Regression, Decision Trees, Random Forests, and XGBoost, to identify the best approach for our data.
-    - The models were trained using a combination of historical data and relevant environmental variables.
-
-    3. **Hyperparameter Tuning and Regularization**:
-    - To optimize the performance of our models, we conducted extensive hyperparameter tuning. This process involved adjusting model parameters to minimize errors and improve predictive accuracy.
-    - Regularization techniques were applied to prevent overfitting, ensuring that our models could generalize well to unseen data.
-
-    4. **Evaluation and Interpretation**:
-    - The models were evaluated using key metrics such as R² Score, Mean Absolute Error (MAE), and Mean Squared Error (MSE).
-    - Visualization of feature importance and error analysis helped us interpret the results and refine our understanding of the underlying relationships.
-
-    ### Results
-
-    The final stacked model, which combined the strengths of multiple models, demonstrated strong predictive capabilities, as shown in the graphs below:
+    The journey from raw data to a predictive model that can estimate life expectancy based on various health metrics and environmental factors involves several critical steps. Below is a summary of the entire machine learning pipeline that we developed for this project.
     """)
+
+    st.write("""
+    ### 1. Data Acquisition
+
+    Our first step was gathering a comprehensive dataset that includes various health and environmental metrics across multiple cities. The data acquisition process involved:
+
+    - **City Data Retrieval**: Collecting basic information about each city, including coordinates and population size.
+    - **Google Earth Engine (GEE)**: Extracting data on green space coverage in each city, which is critical to understanding the potential environmental impact on health.
+    - **Health Data Collection**: Gathering key health metrics such as obesity rates, smoking rates, exercise levels, life expectancy, and chronic conditions (including COPD and depression) from reliable public health databases.
+    - **OpenWeather API**: Collecting Air Quality Index (AQI) data to include as a key environmental variable that could affect health outcomes.
+    """)
+
+    st.write("""
+    ### 2. Data Cleaning and Exploratory Data Analysis (EDA)
+
+    With the raw data in hand, the next step was to clean and prepare it for analysis. This involved:
+
+    - **Handling Missing Values**: We identified and filled or removed missing values to ensure the integrity of our dataset.
+    - **Data Type Conversion**: Ensuring that all data was in the correct format, particularly when dealing with numerical and categorical variables.
+    - **Outlier Detection and Handling**: Identifying and managing outliers to prevent them from skewing our results. This included techniques like the Interquartile Range (IQR) and Z-score methods.
+    - **Correlation Analysis**: Using correlation matrices to identify relationships between variables, which helped guide feature selection and engineering.
+    """)
+
+    st.image("visualizations/Correlation_matrix_features.png", caption="Correlation Matrix", use_column_width=True)
+
+    st.write("""
+    ### 3. Feature Engineering
+
+    To enhance the predictive power of our models, we performed several feature engineering tasks:
+
+    - **Creating New Features**: We developed new features based on existing health metrics, such as adjusted rates for various conditions at the city level. We also incorporated environmental features like AQI and green space coverage.
+    - **Feature Selection**: Based on correlation coefficients, we selected the most relevant features while avoiding highly correlated ones to prevent multicollinearity.
+    - **Data Transformation**: Standardizing and scaling the data to ensure that all features contributed equally to the model and that no single feature dominated due to its scale.
+    """)
+
+    st.write("""
+    ### 4. Model Selection and Tuning
+
+    The heart of the machine learning process involved selecting the best models, tuning them, and validating their performance:
+
+    - **Model Selection**: We experimented with several regression models, including:
+      - Linear Regression
+      - Support Vector Regression (SVR)
+      - Gradient Boosting
+      - Random Forest Regressor
+      - Decision Tree Regressor
+      - XGBoost
+
+    - **Cross-Validation**: We used cross-validation to ensure that our models were not overfitting and could generalize well to unseen data.
+    - **GridSearchCV**: For the top-performing models, we applied GridSearchCV to find the best hyperparameters, further optimizing the models.
+    - **Overfitting Check**: We trained the models on the training set and evaluated them on the test set to check for overfitting. If the performance on the test set was significantly worse, we made adjustments to mitigate overfitting.
+    """)
+
+    st.write("""
+    ### 5. Stacking and Final Model
+
+    To maximize predictive accuracy, we employed a stacking technique:
+
+    - **Model Stacking**: We combined the predictions of the best-performing models into a final ensemble model. This model benefits from the strengths of each individual model.
+    - **Final Model Training**: We trained the final stacked model on the full dataset, ensuring it had the best possible chance of making accurate predictions.
+    - **SHAP Analysis**: Finally, we applied SHAP (SHapley Additive exPlanations) to interpret the model's predictions. SHAP values allowed us to understand the contribution of each feature to the model’s predictions, providing transparency and insight into the factors most influencing life expectancy.
+    """)
+
+    st.image("visualizations/SHAP_features.png", caption="SHAP Feature Importance", use_column_width=True)
+
+    st.write("""
+    ### Conclusion
+
+    Through this rigorous and comprehensive machine learning process, we developed a robust model capable of predicting life expectancy based on a wide range of health and environmental factors. The model's performance metrics and SHAP analysis provide valuable insights into the key drivers of life expectancy, offering potential pathways for improving public health outcomes.
+    """)
+
+    st.image("visualizations/Grouplot_final_staked_model.png", caption="Final Performance Results", use_column_width=True)
 
 # Page 5: Calculator
 elif page == "Calculator":
