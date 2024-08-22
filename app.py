@@ -93,7 +93,7 @@ st.sidebar.image("/Users/alexandreribeiro/Documents/GitHub/final_project/visuali
 
 # Continue with the rest of your sidebar content
 st.sidebar.title("Navigation")
-page = st.sidebar.radio("Go to", ["Project Overview", "","Machine Learning", "Calculator"])
+page = st.sidebar.radio("Go to", ["Project Overview", "Findings","Machine Learning", "Calculator"])
 
 # Page 1: Project Overview
 if page == "Project Overview":
@@ -103,9 +103,9 @@ if page == "Project Overview":
     Below you'll find different sections that explain how the project works, the data collected, and the machine learning models used.
     """)
 
-# Page 2: Data Collection
-elif page == "Data Collection":
-    st.title("Data Collection")
+# Page 2: Findings
+elif page == "Findings":
+    st.title("Findings")
     st.write("""
     The data used in this project is sourced from various public health databases and city-specific information. 
     The dataset includes information on air quality, green space area, population size, and health metrics such as obesity and smoking rates.
