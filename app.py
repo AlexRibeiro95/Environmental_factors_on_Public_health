@@ -121,7 +121,7 @@ st.markdown(
 
 
 # Display the logo in the sidebar
-st.sidebar.image("/Users/alexandreribeiro/Documents/GitHub/final_project/visualizations/logo.png", use_column_width=True)
+st.sidebar.image("visualizations/logo.png", use_column_width=True)
 
 # Add a centered and italic legend or caption below the logo
 st.sidebar.markdown("""
