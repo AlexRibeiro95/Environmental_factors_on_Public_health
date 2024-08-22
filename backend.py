@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import os
 import xgboost as xgb
+from xgboost import XGBRegressor
 from sklearn.linear_model import LinearRegression
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor
