@@ -10,10 +10,7 @@ from streamlit_folium import folium_static
 import pandas as pd
 import plotly.express as px
 from openai import OpenAIError
-
-# Load environment variables from .env file
-
-load_dotenv()
+from openai import ChatCompletion
 
 # Load your API key securely
 
