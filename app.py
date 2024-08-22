@@ -20,33 +20,26 @@ load_dotenv()
 api_key = os.getenv("GPT_API_KEY")
 openai.api_key = api_key
 
+import openai
+from openai import OpenAIError
+
 def get_suggestions_from_openai(smoker, copd, obesity, depression, max_tokens=200):
     prompt = f"Based on the user's health data, generate health suggestions: smoker: {smoker}, copd: {copd}, obesity: {obesity}, depression: {depression}."
     
     try:
-        # Initial request with the updated API method
-        response = openai.Completion.create(
-            engine="text-davinci-003",  # Use "gpt-3.5-turbo" if you have access to ChatGPT models
-            prompt=prompt,
+        # Use the ChatCompletion endpoint for chat-based models like gpt-3.5-turbo
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant that provides health suggestions."},
+                {"role": "user", "content": prompt}
+            ],
             temperature=0.7,
-            max_tokens=max_tokens  # Provide extra tokens as a buffer
+            max_tokens=max_tokens
         )
         
         # Parse the response
-        suggestions = response.choices[0].text.strip()
-        
-        # Check if the suggestions end with a complete sentence
-        if not suggestions.endswith('.'):
-            # Follow-up request to complete the sentence
-            follow_up_prompt = "Please complete the previous suggestions."
-            follow_up_response = openai.Completion.create(
-                engine="text-davinci-003",
-                prompt=follow_up_prompt,
-                temperature=0.7,
-                max_tokens=100  # Smaller token count for the follow-up
-            )
-            follow_up_suggestions = follow_up_response.choices[0].text.strip()
-            suggestions += " " + follow_up_suggestions
+        suggestions = response['choices'][0]['message']['content'].strip()
         
         return suggestions
     
