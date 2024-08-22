@@ -1,4 +1,4 @@
-name: final_project_env
+name: env_test
 channels:
   - conda-forge
   - defaults
