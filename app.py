@@ -64,7 +64,7 @@ st.markdown(
     <style>
     /* Set the background color for the entire page */
     .stApp {
-        background-color: #7BAA89; /* Light grey color, replace with your desired color */
+        background-color: #3C4F5B; /* Light grey color, replace with your desired color */
     }
     </style>
     """,
@@ -93,7 +93,7 @@ st.sidebar.image("/Users/alexandreribeiro/Documents/GitHub/final_project/visuali
 
 # Continue with the rest of your sidebar content
 st.sidebar.title("Navigation")
-page = st.sidebar.radio("Go to", ["Project Overview", "Data Collection", "Machine Learning", "Calculator"])
+page = st.sidebar.radio("Go to", ["Project Overview", "","Machine Learning", "Calculator"])
 
 # Page 1: Project Overview
 if page == "Project Overview":
