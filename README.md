@@ -135,6 +135,6 @@ Reflected on the potential impact of the project on public health awareness and 
 
 ## Credits and Management/Presentation Links
 
-**Author:** [Alexandre Ribeiro](https://www.linkedin.com/in/alexandre-ribeiro-264445279/)
-**Notion:** [Management - Notion](https://alpine-bathtub-2e4.notion.site/Environmental-factors-on-Public-Health-deea5e9c20714696972fc24a07de5fcc)
-**Streamlit:** [Streamlit]()
+- **Author:** [Alexandre Ribeiro](https://www.linkedin.com/in/alexandre-ribeiro-264445279/)
+- **Notion:** [Management - Notion](https://alpine-bathtub-2e4.notion.site/Environmental-factors-on-Public-Health-deea5e9c20714696972fc24a07de5fcc)
+- **Streamlit:** [Streamlit]()
